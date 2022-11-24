@@ -13,7 +13,11 @@
 </head>
 <body>
     
+    {{-- navigation here --}}
+
     @yield('content')
+
+    {{-- footer here --}}
 
 </body>
 </html>
