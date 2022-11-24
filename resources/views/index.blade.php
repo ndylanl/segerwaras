@@ -4,6 +4,8 @@
 
 @section('content')
 
-    this is index
+<h1 class="text-3xl font-bold underline">
+    This is index
+</h1>
   
 @endsection
