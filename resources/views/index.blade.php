@@ -24,14 +24,17 @@
             <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                  <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="w-full bg-red-400 h-full flex flex-col md:flex-row">
-                        <div>
+                    <div class="w-full bg-red-400 h-full flex flex-col md:flex-row justify-between p-10">
+                        <div class="w-1/2">
                             <img src="img/sgrwrsCap.png" alt="">
                         </div>
-                        <div>
+                        <div class="w-1/2">
                             title produk
                             produk desc
                             buy button
+                            <button class="bg-red-200 btn">
+                                Buy Me Now
+                            </button>
                         </div>
                     </div>
                 </div>
