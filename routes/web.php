@@ -38,6 +38,24 @@ Route::get('/berita', function () {
     ]);
 });
 
+Route::get('/berita/id', function(){
+    return view('showberita', [
+        'title' => 'Berita'
+    ]);
+});
+
+Route::get('/products/id', function(){
+    return view('showproduct', [
+        'title' => 'Product'
+    ]);
+});
+
+Route::get('/cart', function(){
+    return view('cart', [
+        'title' => 'Shopping Cart'
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

@@ -79,7 +79,7 @@
             <div class="hidden md:block">
                 <div class="absolute z-30 -bottom-48 w-full px-12 grid grid-cols-4">
                     <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0">
-                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
+                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-auto">
                     </button>
                     <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1">
                         <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
@@ -116,8 +116,8 @@
 {{-- this is contact info --}}  
 
 <div id="3" class="bg-neutral-50 h-fit">
-    <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20">
-        <div class="w-full pt-6 pl-6">
+    <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20 lg:mx-0">
+        <div class="w-full pt-6 lg:pl-6 px-10">
             <h4 class="text-3xl font-bold md:mb-10">Contact Us</h4>
             <p class="mt-3 md:mt-6 lg:mr-12">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
@@ -150,7 +150,7 @@
                     <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
                     <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
                 </div>
-                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <button type="submit" class="text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
             </form>
         </div>
     </div>
