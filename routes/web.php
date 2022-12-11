@@ -20,6 +20,24 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/products', function () {
+    return view('product', [
+        'title' => 'Product'
+    ]);
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus', [
+        'title' => 'About Us'
+    ]);
+});
+
+Route::get('/berita', function () {
+    return view('berita', [
+        'title' => 'Berita'
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
