@@ -18,8 +18,8 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('message');
-            $table->string('adrress');
+            $table->text('message');
+            $table->string('address');
             $table->string('city');
             $table->string('zip');
             $table->string('province');

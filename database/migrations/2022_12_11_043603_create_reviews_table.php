@@ -18,7 +18,7 @@ return new class extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->double('score');
-            $table->string('content');
+            $table->text('content');
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Product::class);
             $table->timestamps();

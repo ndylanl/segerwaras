@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Detail;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DetailSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class DetailSeeder extends Seeder
      */
     public function run()
     {
-        Detail::Factory()->count(15)->create();
+        User::Factory()->count(5)->create();
     }
 }

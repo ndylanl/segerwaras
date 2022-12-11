@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class BlogFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'=>$this->faker->sentence(),
+            'content'=>$this->faker->paragraph(),
+            'cover'=>"coverphoto.jpg",
+            'user_id'=>User::all()->where('isAdmin', true)->random()->id
         ];
     }
 }

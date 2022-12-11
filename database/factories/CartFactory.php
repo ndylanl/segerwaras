@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class CartFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'totalPrice'=>$this->faker->randomNumber(),
+            'user_id'=>User::all()->where('isAdmin', false)->random()->id
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Distributor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class DetailFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'location'=>$this->faker->address(),
+            'timeOpen'=>$this->faker->time(),
+            'timeClosed'=>$this->faker->time(),
+            'distributor_id'=>Distributor::all()->random()->id
         ];
     }
 }

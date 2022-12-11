@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Distributor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class DistributorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Distributor::Factory()->count(10)->create();
     }
 }
