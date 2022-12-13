@@ -21,7 +21,7 @@ class BlogFactory extends Factory
             'title'=>$this->faker->sentence(),
             'content'=>$this->faker->paragraph(),
             'cover'=>"coverphoto.jpg",
-            'user_id'=>User::all()->where('isAdmin', true)->random()->id
+            'user_id'=>User::all()->where('role', 'admin')->random()->id
         ];
     }
 }

@@ -28,7 +28,7 @@ class TransactionFactory extends Factory
             'province'=>$this->faker->state(),
             'phoneNumber'=>$this->faker->phoneNumber(),
             'cart_id'=>Cart::all()->random()->id,
-            'user_id'=>User::all()->where('isAdmin', false)->random()->id
+            'user_id'=>User::all()->where('role', 'member')->random()->id
         ];
     }
 }

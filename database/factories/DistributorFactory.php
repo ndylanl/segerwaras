@@ -20,7 +20,7 @@ class DistributorFactory extends Factory
         return [
             'name'=>$this->faker->sentence(),
             'description'=>$this->faker->paragraph(),
-            'user_id'=>User::all()->where('isAdmin', true)->random()->id
+            'user_id'=>User::all()->where('role', 'admin')->random()->id
         ];
     }
 }

@@ -21,7 +21,7 @@ class ReviewFactory extends Factory
         return [
             'score'=>$this->faker->randomFloat(null,1,5),
             'content'=>$this->faker->paragraph(),
-            'user_id'=>User::all()->where('isAdmin', false)->random()->id,
+            'user_id'=>User::all()->where('role', 'member')->random()->id,
             'product_id'=>Product::all()->random()->id
         ];
     }

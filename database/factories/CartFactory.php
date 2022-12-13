@@ -19,7 +19,7 @@ class CartFactory extends Factory
     {
         return [
             'totalPrice'=>$this->faker->randomNumber(),
-            'user_id'=>User::all()->where('isAdmin', false)->random()->id
+            'user_id'=>User::all()->where('role', 'member')->random()->id
         ];
     }
 }
