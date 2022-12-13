@@ -12,10 +12,46 @@
         <span class="absolute left-1/2 px-3 text-5xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">VISI & MISI</span>
     </div>
 
+
+    {{--visi and misi--}}    
     <div class="mx-auto w-1/2 mt-10">
         <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem magnam recusandae velit dolorem iure quos. Adipisci libero debitis cupiditate, rerum cum similique temporibus? Animi maxime sit incidunt autem possimus?</p>
         <p class="text-center mt-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem magnam recusandae velit dolorem iure quos. Adipisci libero debitis cupiditate, rerum cum similique temporibus? Animi maxime sit incidunt autem possimus?</p>
     </div>
+
+    {{--sejarah--}}    
+    <div class="w-4/5 my-16 h-fit mx-auto relative">
+        <div class="bg-gray-600 rounded-full h-full w-1 absolute left-1/2"></div>
+
+        <div class="block md:grid md:grid-cols-2 gap-y-4 h-fit mx-auto bg-red-200 p-2">
+            <div class="w-full h-64 bg-blue-200">
+                img
+            </div>
+            <div class="w-full h-64 bg-green-200">
+                text
+            </div>
+            <div class="w-full h-64 bg-blue-200">
+                img
+            </div>
+            <div class="w-full h-64 bg-green-200">
+                text
+            </div>
+            <div class="w-full h-64 bg-blue-200">
+                img
+            </div>
+            <div class="w-full h-64 bg-green-200">
+                text
+            </div>
+            <div class="w-full h-64 bg-blue-200">
+                img
+            </div>
+            <div class="w-full h-64 bg-green-200">
+                text
+            </div>
+        </div>
+    </div>
+
+
 
 
     {{--distributor carousel--}}    
@@ -108,3 +144,5 @@
 
 
 @endsection
+
+
