@@ -12,7 +12,7 @@
         <span class="absolute left-1/2 px-3 text-5xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">BERITA</span>
     </div>
 
-    <h1 class="font-black text-3xl text-gray-800 text-center mx-auto mt-20">JUDUL CERITA</h1>
+    <h1 class="font-black text-3xl text-gray-800 text-center mx-auto mt-20">{{ $berita['title'] }}</h1>
 
     <img src="/img/sgrwrsCap.png" alt="" class="lg:h-96 w-auto mx-auto mt-10">
 

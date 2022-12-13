@@ -4,9 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
+    /**
+     * Apply the middleware to all methods except the specified ones.
+     *
+     * @return void
+     */
+    public function except()
+    {
+        $this->middleware('admin')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        return view('berita',[
+            'title' => "Blogs",
+            'berita' => Blog::all()
+        ]);
     }
 
     /**
@@ -24,7 +39,10 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('createblog',
+        [
+            'title' => "Create Blog",
+        ]);
     }
 
     /**
@@ -35,7 +53,18 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "title" => "required|string|max:255",
+            "content" => "required",
+            "cover" => "required|image"
+        ]);
+        Blog::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'cover' => $request->file('cover')->store('blogcover', 'public'),
+            'user_id' => Auth::id()
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -46,7 +75,10 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        return view('showberita', [
+            'title' => "Show Blogs",
+            'berita' => $blog
+        ]);
     }
 
     /**
@@ -57,7 +89,10 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view("updateblog", [
+            "title" => "Update Blog",
+            "blog" => $blog
+        ]);
     }
 
     /**
@@ -69,7 +104,20 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        if($request->file('cover')){
+            unlink('storage/'.$blog->cover);
+            $blog->update([
+                "title"=>$request->title,
+                "content"=>$request->content,
+                "cover"=>$request->file('cover')->store('blogcover', 'public')
+            ]);
+        } else {
+            $blog->update([
+                "title"=>$request->title,
+                "content"=>$request->content,
+            ]);
+        }
+        return redirect("/");
     }
 
     /**
@@ -80,6 +128,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        $blog->delete();
+        return redirect('/');
     }
 }

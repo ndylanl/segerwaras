@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('blog', BlogController::class);
 
 Route::get('/', function () {
     return view('index', [
@@ -32,17 +35,9 @@ Route::get('/aboutus', function () {
     ]);
 });
 
-Route::get('/berita', function () {
-    return view('berita', [
-        'title' => 'Berita'
-    ]);
-});
+Route::get('/berita', [BlogController::class, 'index']);
 
-Route::get('/berita/id', function(){
-    return view('showberita', [
-        'title' => 'Berita'
-    ]);
-});
+Route::get('/berita/{blog}',[BlogController::class, 'show']);
 
 Route::get('/products/id', function(){
     return view('showproduct', [

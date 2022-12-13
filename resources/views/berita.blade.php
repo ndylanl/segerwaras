@@ -35,19 +35,8 @@
             <span class="absolute left-1/2 px-3 text-2xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 text-center">BERITA LAINNYA</span>
         </div>
 
-        <?php
-            $berita = array(
-                1,
-                2,
-                1,
-                2,
-                1,
-                
-            );
-        ?>
-
         @foreach ($berita as $br)
-        <x-beritacomp date="insert date here" :title="'test'" :link="'/berita/id'"/>
+        <x-beritacomp :date="$br['updated_at']" :title="$br['title']" link="berita/{{ $br->id }}"/>
         @endforeach
 
     </div>
