@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Plant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlantController extends Controller
 {
+    /**
+     * Apply the middleware to all methods except the specified ones.
+     *
+     * @return void
+     */
+    public function except()
+    {
+        $this->middleware('admin')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,10 @@ class PlantController extends Controller
      */
     public function index()
     {
-        //
+        return view('', [
+            'title' => "Factories",
+            'factory' => Plant::all()
+        ]);
     }
 
     /**
@@ -24,7 +38,10 @@ class PlantController extends Controller
      */
     public function create()
     {
-        //
+        return view('createplant',
+        [
+            'title' => "Create Factory"
+        ]);
     }
 
     /**
@@ -35,7 +52,16 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "name" => "required|string|max:255",
+            "description" => "required"
+        ]);
+        Plant::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'user_id' => Auth::id()
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -46,7 +72,10 @@ class PlantController extends Controller
      */
     public function show(Plant $plant)
     {
-        //
+        return view('', [
+            'title' => "Show Factory",
+            'factory' => $plant
+        ]);
     }
 
     /**
@@ -57,7 +86,10 @@ class PlantController extends Controller
      */
     public function edit(Plant $plant)
     {
-        //
+        return view('updateplant', [
+            'title' => "Update Factory",
+            'plant' => $plant
+        ]);
     }
 
     /**
@@ -69,7 +101,11 @@ class PlantController extends Controller
      */
     public function update(Request $request, Plant $plant)
     {
-        //
+        $plant->update([
+            'name'=>$request->name,
+            'description'=>$request->description
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -80,6 +116,7 @@ class PlantController extends Controller
      */
     public function destroy(Plant $plant)
     {
-        //
+        $plant->delete();
+        return redirect('/');
     }
 }
