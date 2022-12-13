@@ -20,7 +20,7 @@
 
     <div class="flex justify-center">
         <div id="default-carousel" class="relative w-4/5" data-carousel="static">
-            <!-- Carousel wrapper -->
+            <!-- Carousel wrapper -->Ö
             <div class="relative h-[60vh] overflow-hidden rounded-lg">
                  <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -113,7 +113,7 @@
 
 </div>
 
-{{-- this is contact info --}}  
+{{-- this is contact us --}}  
 
 <div id="3" class="bg-neutral-50 h-fit">
     <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20 lg:mx-0">

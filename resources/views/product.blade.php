@@ -19,8 +19,8 @@
                 <button class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
             </form>
             <div class="w-full mt-6 px-4 h-full hidden md:block">
-                <div class="border border-black w-full h-96">
-                    <div class="bg-green-600 text-white border-b-2 border-black">
+                <div class="border border-gray-500 w-full h-96 rounded-lg shadow-md">
+                    <div class="bg-green-600 text-white border-b-2 rounded-t-md border-black">
                         <p class="py-3 pl-3">
                             Filter
                         </p>
@@ -46,7 +46,7 @@
             ?>
 
             @foreach ($products as $pr)
-            <x-produkcomp imgsrc="/img/sgrwrsCap.png" :name="'test'"/>
+            <x-produkcomp imgsrc="/img/sgrwrsCap.png" :name="'test'" :link="'/products/id'"/>
             @endforeach
 
         </div>
