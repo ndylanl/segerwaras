@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
@@ -33,9 +35,30 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Cart $cart)
     {
-        //
+        $this->validate($request, [
+            'name' => "required|string|max:255",
+            'message' => 'required',
+            'address' => 'required|string|max:255',
+            'city' => 'required|string|max:255',
+            'zip' => 'required|string|max:255',
+            'province' => 'required|string|max:255',
+            'phoneNumber' => 'required|string|max:255'
+        ]);
+        Transaction::create([
+            'status' => 'processing',
+            'name' => $request->name,
+            'message' => $request->message,
+            'address' => $request->address,
+            'city' => $request->city,
+            'zip' => $request->zip,
+            'province' => $request->province,
+            'phoneNumber' => $request->phone_number,
+            'cart_id' => $cart->id,
+            'user_id' => Auth::id()
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -69,7 +92,17 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        //
+        $transaction::update([
+            'status' => $request->status,
+            'name' => $request->name,
+            'message' => $request->message,
+            'address' => $request->address,
+            'city' => $request->city,
+            'zip' => $request->zip,
+            'province' => $request->province,
+            'phoneNumber' => $request->phone_number,
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -80,6 +113,7 @@ class TransactionController extends Controller
      */
     public function destroy(Transaction $transaction)
     {
-        //
+        $transaction->delete();
+        return redirect('/');
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::resource('distributor', DistributorController::class);
 Route::resource('product', ProductController::class);
 Route::resource('review', ReviewController::class);
 Route::resource('cart', CartController::class);
+Route::resource('transaction', Transaction::class);
 
 Route::get('/', function () {
     return view('index', [

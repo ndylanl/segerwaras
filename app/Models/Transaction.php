@@ -18,7 +18,9 @@ class Transaction extends Model
         'city',
         'zip',
         'province',
-        'phoneNumber'
+        'phoneNumber',
+        'cart_id',
+        'user_id'
     ];
 
     public function cart()
