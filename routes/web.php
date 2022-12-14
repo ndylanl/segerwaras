@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,8 @@ Route::resource('blog', BlogController::class);
 Route::resource('plant', PlantController::class);
 Route::resource('distributor', DistributorController::class);
 Route::resource('product', ProductController::class);
+Route::resource('review', ReviewController::class);
+Route::resource('cart', CartController::class);
 
 Route::get('/', function () {
     return view('index', [
