@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -33,9 +35,19 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        //
+        $this->validate($request, [
+            'content' => "required",
+            'score' => "required"
+        ]);
+        Review::create([
+            'content' => $request->content,
+            'score' => $request->score,
+            'user_id' => Auth::id(),
+            'product_id' => $product->id
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -69,7 +81,11 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $review->update([
+            'content' => $request->content,
+            'score' => $request->score,
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -80,6 +96,7 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return redirect('/');
     }
 }
