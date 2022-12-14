@@ -75,7 +75,7 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return view('showberita', [
-            'title' => "Show Blogs",
+            'title' => "Show Blog",
             'berita' => $blog
         ]);
     }

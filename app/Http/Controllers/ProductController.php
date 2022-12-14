@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    /**
+     * Apply the middleware to all methods except the specified ones.
+     *
+     * @return void
+     */
+    public function except()
+    {
+        $this->middleware('admin')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('product', [
+            'title' => "Products",
+            'products' => Product::all()
+        ]);
     }
 
     /**
@@ -24,7 +38,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('createproduct', 
+        [
+            'title' => "Create Product",
+            'tags' => Tag::all()
+        ]);
     }
 
     /**
@@ -35,7 +53,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "name" => "required|string|max:255",
+            "description" => "required",
+            "price" => "required|integer",
+            "unitstock" => "required|integer",
+            "cover" => "required|image",
+        ]);
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'unitStock' => $request->unitstock,
+            'cover' => $request->file('cover')->store('productcover', 'public'),
+            'isVisible' => $request->boolean('isvisible'),
+        ]);
+
+        $tag = Tag::find($request->tags);
+        $product->tags()->attach($tag);
+
+        return redirect('/');
     }
 
     /**
@@ -46,7 +83,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('showproduct', [
+            'title' => "Show Product",
+            'product' => $product
+        ]);
     }
 
     /**
@@ -57,7 +97,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('updateproduct', [
+            'title' => "Update Prodcuts",
+            'product' => $product,
+            'tags' => Tag::all(),
+        ]);
     }
 
     /**
@@ -69,7 +113,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        if($request->file('cover')){
+            unlink('storage/'.$product->cover);
+            $product->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'unitStock' => $request->unitstock,
+                'cover' => $request->file('cover')->store('productcover', 'public'),
+                'isVisible' => $request->boolean('isvisible')
+            ]);
+        } else {
+            $product->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'price' => $request->price,
+                'unitStock' => $request->unitstock,
+                'isVisible' => $request->boolean('isvisible')
+            ]);
+        }
+
+        $tag = Tag::find($request->tags);
+        $product->tags()->sync($tag);
+
+        return redirect("/");
     }
 
     /**
@@ -80,6 +147,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        unlink('storage/'.$product->cover);
+        $product->delete();
+        return redirect('/');
     }
 }

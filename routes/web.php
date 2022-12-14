@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\PlantController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('blog', BlogController::class);
 Route::resource('plant', PlantController::class);
 Route::resource('distributor', DistributorController::class);
+Route::resource('product', ProductController::class);
 
 Route::get('/', function () {
     return view('index', [
@@ -27,11 +29,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/products', function () {
-    return view('product', [
-        'title' => 'Product'
-    ]);
-});
+Route::get('/products', [ProductController::class, 'index']);
 
 Route::get('/aboutus', function () {
     return view('aboutus', [
@@ -43,11 +41,7 @@ Route::get('/berita', [BlogController::class, 'index']);
 
 Route::get('/berita/{blog}',[BlogController::class, 'show']);
 
-Route::get('/products/id', function(){
-    return view('showproduct', [
-        'title' => 'Product'
-    ]);
-});
+Route::get('/products/{product}', [ProductController::class, 'show']);
 
 Route::get('/cart', function(){
     return view('cart', [
