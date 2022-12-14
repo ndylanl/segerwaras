@@ -35,7 +35,12 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'tag' => "required|string|max:255",
+        ]);
+        Tag::create([
+            'tag' => $request->tag
+        ]);
     }
 
     /**
@@ -69,7 +74,9 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $tag->update([
+            'tag' => $request->tag
+        ]);
     }
 
     /**
@@ -80,6 +87,6 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
     }
 }

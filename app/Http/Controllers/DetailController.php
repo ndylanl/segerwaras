@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail;
+use App\Models\Distributor;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -33,9 +34,19 @@ class DetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Distributor $distributor)
     {
-        //
+        $this->validate($request, [
+            'location' => "required|string|max:255",
+            'timeOpen' => "required",
+            'timeClosed' => "required"
+        ]);
+        Detail::create([
+            'location' => $request->location,
+            'timeOpen' => $request->open,
+            'timeClosed' => $request->closed,
+            'distributor_id' => $distributor->id
+        ]);
     }
 
     /**
@@ -69,7 +80,11 @@ class DetailController extends Controller
      */
     public function update(Request $request, Detail $detail)
     {
-        //
+        $detail->update([
+            'location' => $request->location,
+            'timeOpen' => $request->open,
+            'timeClosed' => $request->closed,
+        ]);
     }
 
     /**
@@ -80,6 +95,6 @@ class DetailController extends Controller
      */
     public function destroy(Detail $detail)
     {
-        //
+        $detail->delete();
     }
 }

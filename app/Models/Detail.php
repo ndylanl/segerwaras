@@ -12,7 +12,8 @@ class Detail extends Model
     protected $fillable = [
         'location',
         'timeOpen',
-        'timeClosed'
+        'timeClosed',
+        'distributor_id'
     ];
 
     public function distributor()
