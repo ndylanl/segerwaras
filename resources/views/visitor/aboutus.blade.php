@@ -99,7 +99,7 @@
     {{--Plant carousel--}}    
 
     <div class="w-3/4 mx-auto">
-        <div class="text-2xl text-center font-extrabold mx-auto w-full mt-10">See our Plants</div>
+        <div class="text-2xl text-center font-extrabold mx-auto w-full mt-10">See our Factories</div>
         <div class="flex justify-center">
             <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
                 <!-- Carousel wrapper -->

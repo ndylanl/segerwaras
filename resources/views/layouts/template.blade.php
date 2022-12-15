@@ -31,11 +31,12 @@
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">SegerWaras</span>
         </a>
         <div class="flex md:order-2">
+            @auth
             <a href="/cart" class="hidden lg:flex flex-row text-white bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                 Cart
                 <img src="/img/cartIcon.png" alt="" class="mx-2">
             </a>
-            @auth
+
             <a href="/logout" class="hidden lg:block text-white mx-3 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                 Logout
             </a>

@@ -25,7 +25,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('berita',[
+        return view('visitor.berita',[
             'title' => "Blogs",
             'berita' => Blog::all()
         ]);
@@ -33,7 +33,7 @@ class BlogController extends Controller
 
     public function indexAdmin()
     {
-        return view('adminblog',[
+        return view('admin.adminblog',[
             'blogs' => Blog::all()
         ]);
     }
@@ -45,7 +45,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('createblog',
+        return view('visitor.createblog',
         [
             'title' => "Create Blog",
         ]);
@@ -81,7 +81,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('showberita', [
+        return view('visitor.showberita', [
             'title' => "Show Blog",
             'berita' => $blog
         ]);
@@ -95,7 +95,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view("updateblog", [
+        return view("admin.updateblog", [
             "title" => "Update Blog",
             "blog" => $blog
         ]);
@@ -123,7 +123,7 @@ class BlogController extends Controller
                 "content"=>$request->content,
             ]);
         }
-        return redirect("/");
+        return redirect("/adminb");
     }
 
     /**

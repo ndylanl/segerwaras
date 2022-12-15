@@ -15,12 +15,12 @@
 <div id="2" class="min-h-screen bg-neutral-50">
     <div class="inline-flex justify-center items-center w-full mt-10">
         <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 px-3 text-5xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">PRODUK KAMI</span>
+        <span class="absolute left-1/2 px-3 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">PRODUK KAMI</span>
     </div>
 
     <div class="flex justify-center">
         <div id="default-carousel" class="relative w-4/5" data-carousel="static">
-            <!-- Carousel wrapper -->Ö
+            <!-- Carousel wrapper -->
             <div class="relative h-[60vh] overflow-hidden rounded-lg">
                  <!-- Item 1 -->
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -28,7 +28,7 @@
                         <div class="w-full lg:w-1/2 mr-4">
                             <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
                         </div>
-                        <div class="w-full lg:w-1/2 relative">
+                        <div class="w-full lg:w-1/2 relative p-4">
                             <h4 class="text-3xl font-bold">Judul Produk 1</h4>
                             <p class="mt-3">Desc Produk</p>
                             <button class="lg:absolute lg:bottom-1 mt-5 text-white bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">See More</button>

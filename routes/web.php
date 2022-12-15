@@ -31,39 +31,30 @@ Route::resource('cart', CartController::class);
 Route::resource('transaction', Transaction::class);
 
 Route::get('/', function () {
-    return view('index', [
+    return view('visitor.index', [
         'title' => 'Seger Waras'
     ]);
 });
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products', [ProductController::class, 'index'], []);
 
 Route::get('/aboutus', function () {
-    return view('aboutus', [
+    return view('visitor.aboutus', [
         'title' => 'About Us'
     ]);
 });
 
-Route::get('/auth', function () {
-    return view('login', [
-        'title' => 'Login'
-    ]);
-});
+Route::get('/adminp', [ProductController::class, 'indexAdmin']);
 
-Route::get('/signup', function () {
-    return view('register', [
-        'title' => 'Register'
-    ]);
-});
-
-
-Route::get('/adminp', function () {
-    return view('adminproduct');
-});
+Route::get('/adminp/{product}', [ProductController::class, 'edit']);
 
 Route::get('/adminb', [BlogController::class, 'indexAdmin']);
 
-Route::get('/adminb/{blog}', [BlogController::class, 'show']);
+Route::get('/adminb/{blog}', [BlogController::class, 'edit']);
+
+Route::get('/admind', [DistributorController::class, 'indexAdmin']);
+
+Route::get('/admind/{distributor}', [DistributorController::class, 'edit']);
 
 Route::get('/berita', [BlogController::class, 'index']);
 
@@ -72,7 +63,7 @@ Route::get('/berita/{blog}',[BlogController::class, 'show']);
 Route::get('/products/{product}', [ProductController::class, 'show']);
 
 Route::get('/cart', function(){
-    return view('cart', [
+    return view('visitor.cart', [
         'title' => 'Shopping Cart'
     ]);
 });
@@ -80,7 +71,6 @@ Route::get('/cart', function(){
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform']);
  });
-
 
 
 

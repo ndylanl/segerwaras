@@ -25,9 +25,19 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product', [
+        return view('visitor.product', [
             'title' => "Products",
-            'products' => Product::all()
+            'products' => Product::all(),
+            'tags' =>Tag::all()
+        ]);
+    }
+
+    public function indexAdmin()
+    {
+        return view('admin.adminproduct', [
+            'title' => "Admin Product",
+            'products' => Product::all(),
+            'tags' =>Tag::all()
         ]);
     }
 
@@ -83,7 +93,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('showproduct', [
+        return view('visitor.showproduct', [
             'title' => "Show Product",
             'product' => $product
         ]);
@@ -97,7 +107,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('updateproduct', [
+        return view('admin.updateproduct', [
             'title' => "Update Prodcuts",
             'product' => $product,
             'tags' => Tag::all(),
@@ -136,7 +146,7 @@ class ProductController extends Controller
         $tag = Tag::find($request->tags);
         $product->tags()->sync($tag);
 
-        return redirect("/");
+        return redirect("/adminp");
     }
 
     /**

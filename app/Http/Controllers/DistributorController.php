@@ -31,6 +31,14 @@ class DistributorController extends Controller
         ]);
     }
 
+    public function indexAdmin()
+    {
+        return view('admin.admindistributor', [
+            'title' => "Distributors",
+            'distributor' => Distributor::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -86,7 +94,7 @@ class DistributorController extends Controller
      */
     public function edit(Distributor $distributor)
     {
-        return view('updatedistributor', [
+        return view('admin.updatedistributor', [
             'title' => "Update Distributor",
             'distributor' => $distributor,
         ]);
@@ -105,7 +113,7 @@ class DistributorController extends Controller
             'name'=>$request->name,
             'description'=>$request->description
         ]);
-        return redirect('/');
+        return redirect('/admind');
     }
 
     /**
@@ -117,6 +125,6 @@ class DistributorController extends Controller
     public function destroy(Distributor $distributor)
     {
         $distributor->delete();
-        return redirect('/');
+        return redirect('/admind');
     }
 }
