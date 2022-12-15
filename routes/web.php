@@ -7,6 +7,7 @@ use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\LogoutController;
 use App\Models\Transaction;
 use Illuminate\Support\Facades\Route;
 
@@ -75,6 +76,14 @@ Route::get('/cart', function(){
         'title' => 'Shopping Cart'
     ]);
 });
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/logout', [LogoutController::class, 'perform']);
+ });
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
