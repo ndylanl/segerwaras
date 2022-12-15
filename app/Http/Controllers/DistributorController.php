@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Distributor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DistributorController extends Controller
 {
+    /**
+     * Apply the middleware to all methods except the specified ones.
+     *
+     * @return void
+     */
+    public function except()
+    {
+        $this->middleware('admin')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,10 @@ class DistributorController extends Controller
      */
     public function index()
     {
-        //
+        return view('', [
+            'title' => "Distributors",
+            'distributor' => Distributor::all()
+        ]);
     }
 
     /**
@@ -24,7 +38,10 @@ class DistributorController extends Controller
      */
     public function create()
     {
-        //
+        return view('createdistributor',
+        [
+            'title' => "Create Distributor",
+        ]);
     }
 
     /**
@@ -35,7 +52,16 @@ class DistributorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "name" => "required|string|max:255",
+            "description" => "required"
+        ]);
+        Distributor::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'user_id' => Auth::id()
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -46,7 +72,10 @@ class DistributorController extends Controller
      */
     public function show(Distributor $distributor)
     {
-        //
+        return view('', [
+            'title' => "Show Distributor",
+            'distributor' => $distributor
+        ]);
     }
 
     /**
@@ -57,7 +86,10 @@ class DistributorController extends Controller
      */
     public function edit(Distributor $distributor)
     {
-        //
+        return view('updatedistributor', [
+            'title' => "Update Distributor",
+            'distributor' => $distributor,
+        ]);
     }
 
     /**
@@ -69,7 +101,11 @@ class DistributorController extends Controller
      */
     public function update(Request $request, Distributor $distributor)
     {
-        //
+        $distributor->update([
+            'name'=>$request->name,
+            'description'=>$request->description
+        ]);
+        return redirect('/');
     }
 
     /**
@@ -80,6 +116,7 @@ class DistributorController extends Controller
      */
     public function destroy(Distributor $distributor)
     {
-        //
+        $distributor->delete();
+        return redirect('/');
     }
 }

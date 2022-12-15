@@ -34,17 +34,6 @@
 
         <div class="lg:w-3/5 w-4/5 mx-auto lg:mx-24 gap-4 grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-8 lg:gap-x-12 md:ml-8 mt-8 lg:mt-0" >            
 
-            <?php
-                $products = array(
-                    1,
-                    2,
-                    1,
-                    2,
-                    1,
-                    
-                );
-            ?>
-
             @foreach ($products as $pr)
             <x-produkcomp imgsrc="/img/sgrwrsCap.png" :name="'test'" :link="'/products/id'"/>
             @endforeach

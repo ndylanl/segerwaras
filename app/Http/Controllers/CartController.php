@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -35,7 +36,9 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cart::create([
+            'user_id' => Auth::id()
+        ]);
     }
 
     /**
@@ -46,7 +49,10 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        //
+        return view('cart', [
+            'title' => "Cart",
+            'cart' => $cart
+        ]);
     }
 
     /**
@@ -69,7 +75,9 @@ class CartController extends Controller
      */
     public function update(Request $request, Cart $cart)
     {
-        //
+        $cart->update([
+            'totalPrice' => $request->totalprice
+        ]);
     }
 
     /**
@@ -80,6 +88,6 @@ class CartController extends Controller
      */
     public function destroy(Cart $cart)
     {
-        //
+        $cart->delete();
     }
 }

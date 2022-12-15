@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\CartItem;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartItemController extends Controller
 {
@@ -33,9 +35,14 @@ class CartItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        //
+        CartItem::create([
+            'quantity' => $request->quantity,
+            'price' => $product->price,
+            'user_id' => Auth::id(),
+            'product_id' => $product->id
+        ]);
     }
 
     /**
@@ -69,7 +76,9 @@ class CartItemController extends Controller
      */
     public function update(Request $request, CartItem $cartItem)
     {
-        //
+        $cartItem->update([
+            'quantity' => $request->quantity,
+        ]);
     }
 
     /**
@@ -80,6 +89,6 @@ class CartItemController extends Controller
      */
     public function destroy(CartItem $cartItem)
     {
-        //
+        $cartItem->delete();
     }
 }

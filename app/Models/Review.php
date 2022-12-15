@@ -11,7 +11,9 @@ class Review extends Model
 
     protected $fillable = [
         'score',
-        'content'
+        'content',
+        'user_id',
+        'product_id'
     ];
 
     public function product()

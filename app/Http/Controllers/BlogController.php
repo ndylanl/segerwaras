@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-
     /**
      * Apply the middleware to all methods except the specified ones.
      *
@@ -76,7 +75,7 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return view('showberita', [
-            'title' => "Show Blogs",
+            'title' => "Show Blog",
             'berita' => $blog
         ]);
     }
@@ -128,6 +127,7 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
+        unlink('storage/'.$blog->cover);
         $blog->delete();
         return redirect('/');
     }
