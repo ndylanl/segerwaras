@@ -31,6 +31,13 @@ class BlogController extends Controller
         ]);
     }
 
+    public function indexAdmin()
+    {
+        return view('adminblog',[
+            'blogs' => Blog::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

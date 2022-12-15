@@ -60,7 +60,7 @@ Route::get('/adminp', function () {
     return view('adminproduct');
 });
 
-Route::get('/adminb', [BlogController::class, 'index']);
+Route::get('/adminb', [BlogController::class, 'indexAdmin']);
 
 Route::get('/adminb/{blog}', [BlogController::class, 'show']);
 

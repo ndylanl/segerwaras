@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Berita</h1>
+<h1 class="text-3xl font-black">Berita</h1>
 
-    <table class="table table-striped">
+    <table class="table table-striped mt-3">
         <thead>
             <tr>
                 <th>No</th>
@@ -26,12 +26,16 @@
                     </td>
                     <td>{{ $blog['user_id'] }}</td>
                     <td>
-                        <a href="adminb/{{ $br->id }}">
+                        <a href="adminb/{{ $blog->id }}" class="bg-green-300 rounded-md p-3 w-full">
                             Update
                         </a>
-                        <a href="">
-                            Remove
-                        </a>
+                        <form action="{{route("blog.destroy", $blog->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="rounded bg-red-400 p-3 w-full">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
