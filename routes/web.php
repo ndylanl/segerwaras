@@ -35,6 +35,27 @@ Route::get('/aboutus', function () {
     ]);
 });
 
+Route::get('/auth', function () {
+    return view('login', [
+        'title' => 'Login'
+    ]);
+});
+
+Route::get('/signup', function () {
+    return view('register', [
+        'title' => 'Register'
+    ]);
+});
+
+
+Route::get('/adminp', function () {
+    return view('adminproduct');
+});
+
+Route::get('/adminb', [BlogController::class, 'index']);
+
+Route::get('/adminb/{blog}', [BlogController::class, 'show']);
+
 Route::get('/berita', [BlogController::class, 'index']);
 
 Route::get('/berita/{blog}',[BlogController::class, 'show']);
