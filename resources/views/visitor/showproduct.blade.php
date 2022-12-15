@@ -20,21 +20,25 @@
             <?php
                 $attnum = 1;
             ?>
-            <div class="grid grid-cols-3 w-fit mt-28">
+            <form action="{{ route('cartItem.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="grid grid-cols-3 w-fit mt-28">
 
-                <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
-                    -
+                    <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
+                        -
+                    </button>
+                    <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
+                    <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
+                        +
+                    </button>
+
+                    <input type="number" name="product" value="{{ $product['id'] }}" hidden>
+    
+                </div>
+                <button type="submit" class="text-white mt-10 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                    Add to Cart
                 </button>
-                <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="number" value={{ $attnum }} disabled>
-                <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
-                    +
-                </button>
-
-            </div>
-            <button class="text-white mt-10 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                Add to Cart
-            </button>
-
+            </form>
         </div>
     </div>
 

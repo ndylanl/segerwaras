@@ -36,17 +36,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                            $product = array(
-                                1,
-                                2,
-                                3,
-                                4,
-                                5,
-                                
-                            );
-                        ?>
-
                         @foreach ($product as $pr)
                         <x-cartitems id="{{ $pr }}" :name="'test'" :qty="1" :price="100000"/>
                         @endforeach
@@ -64,16 +53,10 @@
     </div>
 
     <div class="w-4/5 p-8 mx-auto my-16">
-        <form action="" method="">
-            <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 mb-6 w-full group">
-                    <label for="floating_first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
-                    <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <label for="floating_last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
-                    <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                </div>
+        <form action="{{ route('transaction.store', ['cart' => $cart]) }}" method="POST" enctype="multipart/form-data">
+            <div class="relative z-0 mb-6 w-full group">
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                <input type="text" name="name" id="name" class="bg-slate-50 rounded-lg border p-2.5 border-gray-300 block py-2.5 w-full text-sm text-gray-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
             </div>
             <div class="relative z-0 mb-6 w-full group">
                 <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">E-mail</label>

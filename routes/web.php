@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
@@ -29,6 +30,7 @@ Route::resource('product', ProductController::class);
 Route::resource('review', ReviewController::class);
 Route::resource('cart', CartController::class);
 Route::resource('transaction', Transaction::class);
+Route::resource('cartItem', CartItemController::class);
 
 Route::get('/', function () {
     return view('visitor.index', [

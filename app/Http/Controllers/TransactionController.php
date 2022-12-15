@@ -92,7 +92,7 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        $transaction::update([
+        $transaction->update([
             'status' => $request->status,
             'name' => $request->name,
             'message' => $request->message,
