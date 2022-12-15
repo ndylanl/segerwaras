@@ -8,19 +8,19 @@
 
 <div class="bg-neutral-50 pb-12">
     <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-20">
-        <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 px-3 text-5xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">PRODUK</span>
+        <hr class="my-8 w-[68rem] h-px bg-green-800 border-0">
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">PRODUK</span>
     </div>
 
     <div class="w-full flex flex-col lg:flex-row mt-20">
         <div class="lg:w-1/4 md:ml-8">
             <form action="" class="w-full px-4">
-                <input type="text" class="focus:ring-2 focus:ring-green-500 w-full">
+                <input type="text" class="focus:ring-2 focus:ring-green-500 w-full border-gray-400">
                 <button class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
             </form>
             <div class="w-full mt-6 px-4 h-full hidden md:block">
-                <div class="border border-gray-500 w-full h-96 rounded-lg shadow-md">
-                    <div class="bg-green-600 text-white border-b-2 rounded-t-md border-black">
+                <div class="border border-gray-300 w-full h-96 rounded-lg shadow-md">
+                    <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
                         <p class="py-3 pl-3">
                             Filter
                         </p>

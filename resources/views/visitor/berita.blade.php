@@ -8,8 +8,8 @@
 
 <div class="bg-neutral-50">
     <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
-        <hr class="my-8 w-[15rem] md:w-[50rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 px-3 text-3xl md:text-5xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2">BERITA</span>
+        <hr class="my-8 w-[15rem] md:w-[68rem] h-px bg-green-800 border-0">
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">BERITA</span>
     </div>
 </div>
 
