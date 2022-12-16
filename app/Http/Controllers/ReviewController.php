@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +34,7 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Product $product)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'content' => "required",
@@ -47,7 +46,7 @@ class ReviewController extends Controller
             'user_id' => Auth::id(),
             'product_id' => $request->product_id
         ]);
-        return redirect('/products');
+        return redirect('/products/'.$request->product_id);
     }
 
     /**
