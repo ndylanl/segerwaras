@@ -48,7 +48,7 @@ class CartItemController extends Controller
             'cart_id' => $user->carts->last()->id,
             'product_id' => $product->id
         ]);
-        return redirect('/');
+        return redirect('/visitor.produts');
     }
 
     /**

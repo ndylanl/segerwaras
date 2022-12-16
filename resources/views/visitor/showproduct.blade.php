@@ -25,7 +25,7 @@
                 @csrf
                 <div class="grid grid-cols-3 w-fit mt-28">
 
-                    <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
+                    <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
                         -
                     </button>
                     <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
@@ -67,11 +67,13 @@
                 if(document.getElementById('number').value != "{{ $product['unitStock'] }}"){
                     document.getElementById('number').value++;
                 }
+                event.preventDefault();
             });
             document.getElementById('substract').addEventListener('click', function() {
                 if(document.getElementById('number').value != 0){
                     document.getElementById('number').value--;
                 }
+                event.preventDefault();
             });
         });
     </script>

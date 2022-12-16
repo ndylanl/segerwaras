@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Distributor;
+use App\Models\Plant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +26,9 @@ class DistributorController extends Controller
      */
     public function index()
     {
-        return view('', [
-            'title' => "Distributors",
+        return view('visitor.aboutus', [
+            'title' => 'About Us',
+            'plant' => Plant::all(),
             'distributor' => Distributor::all()
         ]);
     }
