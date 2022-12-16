@@ -46,7 +46,7 @@ class ProductController extends Controller
     {
 
         $products = DB::table('products')
-                    ->select('products.id', 'products.name', 'products.description', DB::raw("SUM(`cart_items`.`quantity`) as buy"))
+                    ->select('products.id', 'products.name', 'products.description','products.cover', DB::raw("SUM(`cart_items`.`quantity`) as buy"))
                     ->join('cart_items','cart_items.product_id','=','products.id')
                     ->join('carts','cart_items.cart_id','=','carts.id')
                     ->whereExists(function ($query) {

@@ -26,7 +26,7 @@
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="w-full h-full flex flex-col md:flex-row justify-between p-10">
                         <div class="w-full lg:w-1/2 mr-4">
-                            <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
+                            <img src="img/products/{{ $product->cover }}" alt="" class="w-full h-full shadow-lg border border-green-100">
                         </div>
                         <div class="w-full lg:w-1/2 relative p-4">
                             <h4 class="text-3xl font-bold">{{ $product->name }}</h4>
@@ -40,18 +40,11 @@
             <!-- Slider indicators -->
             <div class="hidden md:block">
                 <div class="absolute z-30 -bottom-48 w-full px-12 grid grid-cols-4">
-                    <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0">
-                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-auto">
+                    @foreach ($products as $product)
+                    <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide {{ $loop->iteration }}" data-carousel-slide-to="{{ $loop->iteration }} - 1">
+                        <img src="img/products/{{ $product->cover }}" alt="" class="w-full h-auto shadow-lg border border-green-100">
                     </button>
-                    <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1">
-                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
-                    </button>
-                    <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2">
-                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
-                    </button>
-                    <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2">
-                        <img src="img/sgrwrsCap.png" alt="" class="w-full h-full">
-                    </button>
+                    @endforeach
                 </div>
             </div>
             <!-- Slider controls -->
