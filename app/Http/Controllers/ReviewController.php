@@ -15,7 +15,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.adminreviews' ,[
+            'title' => "Admin Review",
+            'reviews' => Review::all()
+        ]);
     }
 
     /**
