@@ -15,7 +15,6 @@
             <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add{{ $id }}">
                  +
             </button>
-            number{{ $id }}
 
         </div>
     </td>

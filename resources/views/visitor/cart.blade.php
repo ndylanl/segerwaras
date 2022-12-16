@@ -37,7 +37,7 @@
                     </thead>
                     <tbody>
                         @foreach ($cart->cartItems as $pr)
-                        <x-cartitems id="{{ $pr->id }}" :name="$pr->product->name" :qty="$pr->quantity" :price="$pr->price"/>
+                        <x-cartitems id="{{ $pr->id }}" :name="$pr->product->name" :qty="$pr->quantity" :price="($pr->price)*($pr->quantity)"/>
                         @endforeach
                     </tbody>
                 </table>

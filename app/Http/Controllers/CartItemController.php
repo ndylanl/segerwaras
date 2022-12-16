@@ -55,7 +55,7 @@ class CartItemController extends Controller
         $product->unitStock = $product->unitStock - $request->quantity;
         $product->save();
 
-        return redirect('/visitor.produts');
+        return redirect('/products');
     }
 
     /**

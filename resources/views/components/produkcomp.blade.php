@@ -1,6 +1,6 @@
 <div class="max-w-sm bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 lg:mx-2">
     <a href="{{ $link }}">
-        <img class="w-full" src={{ $imgsrc }} alt="" />
+        <img class="w-full" src="/img/products/{{ $imgsrc }}" alt="" />
     </a>
     <div class="p-3">
         <a href="{{ $link }}" class="md:my-5">
