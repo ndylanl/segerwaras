@@ -40,11 +40,7 @@ Route::get('/', function () {
 
 Route::get('/products', [ProductController::class, 'index'], []);
 
-Route::get('/aboutus', function () {
-    return view('visitor.aboutus', [
-        'title' => 'About Us'
-    ]);
-});
+Route::get('/aboutus', [DistributorController::class, 'index']);
 
 Route::get('/adminp', [ProductController::class, 'indexAdmin']);
 
@@ -57,6 +53,10 @@ Route::get('/adminb/{blog}', [BlogController::class, 'edit']);
 Route::get('/admind', [DistributorController::class, 'indexAdmin']);
 
 Route::get('/admind/{distributor}', [DistributorController::class, 'edit']);
+
+Route::get('/adminf', [PlantController::class, 'indexAdmin']);
+
+Route::get('/adminf/{plant}', [PlantController::class, 'edit']);
 
 Route::get('/berita', [BlogController::class, 'index']);
 

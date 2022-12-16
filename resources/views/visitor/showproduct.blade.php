@@ -20,6 +20,7 @@
             <?php
                 $attnum = 1;
             ?>
+            @auth
             <form action="{{ route('cartItem.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid grid-cols-3 w-fit mt-28">
@@ -39,6 +40,16 @@
                     Add to Cart
                 </button>
             </form>
+            @endauth
+
+            @guest
+            <div class="mt-32">
+                <a href="/login" class="text-white w-32 mt-32 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                    Login to Purchase
+                </a>
+            </div>
+            @endguest
+            
         </div>
     </div>
 
@@ -56,11 +67,13 @@
                 if(document.getElementById('quantity').value != "{{ $product['unitStock'] }}"){
                     document.getElementById('quantity').value++;
                 }
+                event.preventDefault();
             });
             document.getElementById('substract').addEventListener('click', function() {
                 if(document.getElementById('quantity').value != 0){
                     document.getElementById('quantity').value--;
                 }
+                event.preventDefault();
             });
         });
     </script>

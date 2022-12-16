@@ -31,6 +31,14 @@ class PlantController extends Controller
         ]);
     }
 
+    public function indexAdmin()
+    {
+        return view('admin.adminfactories', [
+            'title' => "Factories",
+            'factory' => Plant::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -86,7 +94,7 @@ class PlantController extends Controller
      */
     public function edit(Plant $plant)
     {
-        return view('updateplant', [
+        return view('admin.updateplant', [
             'title' => "Update Factory",
             'plant' => $plant
         ]);
@@ -105,7 +113,7 @@ class PlantController extends Controller
             'name'=>$request->name,
             'description'=>$request->description
         ]);
-        return redirect('/');
+        return redirect('/adminf');
     }
 
     /**
@@ -117,6 +125,6 @@ class PlantController extends Controller
     public function destroy(Plant $plant)
     {
         $plant->delete();
-        return redirect('/');
+        return redirect('/adminf');
     }
 }

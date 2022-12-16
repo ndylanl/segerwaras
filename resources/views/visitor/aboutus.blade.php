@@ -15,8 +15,12 @@
 
     {{--visi and misi--}}    
     <div class="mx-auto w-1/2 mt-10">
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem magnam recusandae velit dolorem iure quos. Adipisci libero debitis cupiditate, rerum cum similique temporibus? Animi maxime sit incidunt autem possimus?</p>
-        <p class="text-center mt-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, quidem magnam recusandae velit dolorem iure quos. Adipisci libero debitis cupiditate, rerum cum similique temporibus? Animi maxime sit incidunt autem possimus?</p>
+        <p class="text-center">
+            Menjadi perusahaan farmasi hijau terkemuka Indonesia yang mendorong kualitas hidup melalui penelitian, pengembangan, dan pemasaran obat-obatan berkualitas tinggi.        
+        </p>
+        <p class="text-center mt-8">
+            Berkomitmen untuk memberikan solusi yang aman dan handal untuk pengobatan melalui produk farmasi yang responsif terhadap kebutuhan dan aspirasi masyarakat indonesia; meningkatkan kesadaran akan kesehatan melalui layanan yang efisien dan berbasis teknologi modern; dan untuk berperan aktif dalam mendorong kesehatan dan kualitas hidup masyarakat Indonesia.
+        </p>
     </div>
 
     {{--sejarah--}}    
@@ -61,21 +65,9 @@
             <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
-                     
-
-                    <?php
-                        $distributor = array(
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        );
-                    ?>
 
                     @foreach ($distributor as $dist)
-                    <x-carouselItem :name="$dist" :desc="$dist"/>
+                    <x-carouselItem :name="$dist['name']" :desc="$dist['description']"/>
                     @endforeach
 
                 </div>
@@ -104,21 +96,9 @@
             <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
-                     
 
-                    <?php
-                        $plants = array(
-                            1,
-                            2,
-                            3,
-                            4,
-                            5,
-                            6
-                        );
-                    ?>
-
-                    @foreach ($plants as $pl)
-                    <x-carouselItem :name="$pl" :desc="$pl"/>
+                    @foreach ($plant as $pl)
+                    <x-carouselItem :name="$pl['name']" :desc="$pl['description']"/>
                     @endforeach
 
                 </div>
