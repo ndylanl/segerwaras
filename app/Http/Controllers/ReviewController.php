@@ -45,9 +45,9 @@ class ReviewController extends Controller
             'content' => $request->content,
             'score' => $request->score,
             'user_id' => Auth::id(),
-            'product_id' => $product->id
+            'product_id' => $request->product_id
         ]);
-        return redirect('/');
+        return redirect('/products');
     }
 
     /**

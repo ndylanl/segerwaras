@@ -34,23 +34,23 @@
             <div class="w-full h-64 bg-green-200">
                 text
             </div>
-            <div class="w-full h-64 bg-blue-200">
-                img
-            </div>
             <div class="w-full h-64 bg-green-200">
                 text
             </div>
             <div class="w-full h-64 bg-blue-200">
                 img
             </div>
-            <div class="w-full h-64 bg-green-200">
-                text
-            </div>
             <div class="w-full h-64 bg-blue-200">
                 img
             </div>
             <div class="w-full h-64 bg-green-200">
                 text
+            </div>
+            <div class="w-full h-64 bg-green-200">
+                text
+            </div>
+            <div class="w-full h-64 bg-blue-200">
+                img
             </div>
         </div>
     </div>
