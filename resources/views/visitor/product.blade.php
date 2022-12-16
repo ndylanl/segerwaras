@@ -14,9 +14,9 @@
 
     <div class="w-full flex flex-col lg:flex-row mt-20">
         <div class="lg:w-1/4 md:ml-8">
-            <form action="" class="w-full px-4">
-                <input type="text" class="focus:ring-2 focus:ring-green-500 w-full border-gray-400">
-                <button class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
+            <form action="/products" method="GET" class="w-full px-4">
+                <input type="search" name="search" class="focus:ring-2 focus:ring-green-500 w-full border-gray-400">
+                <button type="submit" class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>
             </form>
             <div class="w-full mt-6 px-4 h-full hidden md:block">
                 <div class="border border-gray-300 w-full h-96 rounded-lg shadow-md">
@@ -26,7 +26,7 @@
                         </p>
                     </div>
                     <div class="h-full">
-                        <form action="">
+                        <form action="/products" method="GET">
                             @foreach ($tags as $tag)
                             <div class="flex items-center p-4 mx-auto">
                                 <input type="checkbox" name="tags[]" value={{ $tag->id }} class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 focus:ring-2">

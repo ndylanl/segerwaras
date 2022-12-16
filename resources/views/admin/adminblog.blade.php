@@ -26,7 +26,7 @@
                     </td>
                     <td>{{ $blog['user_id'] }}</td>
                     <td class="p-2">
-                        <a href="adminb/{{ $blog->id }}" class="bg-green-300 rounded-md p-3 w-full">
+                        <a href="{{ route("blog.edit", ['blog'=>$blog]) }}" class="bg-green-300 rounded-md p-3 w-full">
                             Update
                         </a>
                         <form action="{{route("blog.destroy", $blog->id) }}" method="POST">

@@ -24,13 +24,32 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('visitor.product', [
-            'title' => "Products",
-            'products' => Product::all(),
-            'tags' =>Tag::all()
-        ]);
+
+        if ($request->has('search')) {
+            return view('visitor.product', [
+                'title' => "Products",
+                'products' => Product::where('name', 'like', '%'.$request->search.'%')->get(),
+                'tags' =>Tag::all()
+            ]);
+        } else if ($request->has('tags')) {
+            $tags = $request->tags;
+            return view('visitor.product', [
+                'title' => "Products",
+                'products' => Product::whereHas('tags', function($query) use ($tags){
+                    $query->whereIn('tags.id', $tags);
+                })->get(),
+                'tags' =>Tag::all()
+            ]);
+        } else {
+            return view('visitor.product', [
+                'title' => "Products",
+                'products' => Product::all(),
+                'tags' =>Tag::all()
+            ]);
+        }
+        
     }
 
     public function indexAdmin()
