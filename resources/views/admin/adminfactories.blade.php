@@ -26,7 +26,7 @@
                     </td>
                     <td>{{ $dis['user_id'] }}</td>
                     <td class="p-2">
-                        <a href="adminf/{{ $dis->id }}" class="bg-green-300 rounded-md p-3 w-full">
+                        <a href="{{ route('plant.edit', ['plant'=>$dis]) }}" class="bg-green-300 rounded-md p-3 w-full">
                             Update
                         </a>
                         <form action="{{route("plant.destroy", $dis->id) }}" method="POST">

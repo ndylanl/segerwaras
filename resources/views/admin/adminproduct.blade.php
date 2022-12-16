@@ -32,7 +32,7 @@
                         {{$pr['isVisible']}}
                     </td>
                     <td class="p-2">
-                        <a href="adminp/{{ $pr->id }}" class="bg-green-300 rounded-md p-3 w-full">
+                        <a href="{{ route('product.edit', ['product'=>$pr]) }}" class="bg-green-300 rounded-md p-3 w-full">
                             Update
                         </a>
                         <form action="{{route("product.destroy", $pr->id) }}" method="POST">
