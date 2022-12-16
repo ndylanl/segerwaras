@@ -24,7 +24,11 @@
         }
         .rate:not(:checked) > input {
             position:absolute;
-            top:-9999px;
+            left:-9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
         }
         .rate:not(:checked) > label {
             float:right;
