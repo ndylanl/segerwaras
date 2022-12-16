@@ -32,11 +32,7 @@ Route::resource('cart', CartController::class);
 Route::resource('transaction', TransactionController::class);
 Route::resource('cartItem', CartItemController::class);
 
-Route::get('/', function () {
-    return view('visitor.index', [
-        'title' => 'Seger Waras'
-    ]);
-});
+Route::get('/', [ProductController::class, 'indexIndex']);
 
 Route::get('/products', [ProductController::class, 'index'], []);
 

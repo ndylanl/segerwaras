@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -38,6 +39,29 @@ class ProductController extends Controller
             'title' => "Admin Product",
             'products' => Product::all(),
             'tags' =>Tag::all()
+        ]);
+    }
+
+    public function indexIndex()
+    {
+
+        $products = DB::table('products')
+                    ->select('products.id', 'products.name', 'products.description', DB::raw("SUM(`cart_items`.`quantity`) as buy"))
+                    ->join('cart_items','cart_items.product_id','=','products.id')
+                    ->join('carts','cart_items.cart_id','=','carts.id')
+                    ->whereExists(function ($query) {
+                        $query->from('transactions')
+                            ->select('*')
+                            ->where('transactions.cart_id','=',DB::raw('carts.id'));
+                    })
+                    ->groupBy('cart_items.product_id')
+                    ->orderBy('buy','desc')
+                    ->limit(4)
+                    ->get();
+
+        return view('visitor.index', [
+            'title' => "Seger Waras",
+            'products' => $products
         ]);
     }
 
