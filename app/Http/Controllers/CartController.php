@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,11 +48,12 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show()
     {
-        return view('cart', [
+        return view('visitor.cart', [
             'title' => "Cart",
-            'cart' => $cart
+            'cart' => User::find(Auth::id())->carts->last(),
+
         ]);
     }
 

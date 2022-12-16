@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Transaction;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,8 +36,10 @@ class TransactionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Cart $cart)
+    public function store(Request $request)
     {
+        $user = User::find(Auth::id());
+
         $this->validate($request, [
             'name' => "required|string|max:255",
             'message' => 'required',
@@ -44,7 +47,7 @@ class TransactionController extends Controller
             'city' => 'required|string|max:255',
             'zip' => 'required|string|max:255',
             'province' => 'required|string|max:255',
-            'phoneNumber' => 'required|string|max:255'
+            'phone' => 'required|string|max:255'
         ]);
         Transaction::create([
             'status' => 'processing',
@@ -54,9 +57,13 @@ class TransactionController extends Controller
             'city' => $request->city,
             'zip' => $request->zip,
             'province' => $request->province,
-            'phoneNumber' => $request->phone_number,
-            'cart_id' => $cart->id,
+            'phoneNumber' => $request->phone,
+            'cart_id' => $user->carts->last()->id,
             'user_id' => Auth::id()
+        ]);
+        Cart::create([
+            'user_id' => Auth::id(),
+            'totalPrice' => 0
         ]);
         return redirect('/');
     }

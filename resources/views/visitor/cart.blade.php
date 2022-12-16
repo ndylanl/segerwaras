@@ -36,8 +36,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($product as $pr)
-                        <x-cartitems id="{{ $pr }}" :name="'test'" :qty="1" :price="100000"/>
+                        @foreach ($cart->cartItems as $pr)
+                        <x-cartitems id="{{ $pr->id }}" :name="$pr->product->name" :qty="$pr->quantity" :price="$pr->price"/>
                         @endforeach
                     </tbody>
                 </table>
@@ -53,7 +53,8 @@
     </div>
 
     <div class="w-4/5 p-8 mx-auto my-16">
-        <form action="{{ route('transaction.store', ['cart' => $cart]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('transaction.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="relative z-0 mb-6 w-full group">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                 <input type="text" name="name" id="name" class="bg-slate-50 rounded-lg border p-2.5 border-gray-300 block py-2.5 w-full text-sm text-gray-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -84,7 +85,7 @@
             </div>
             <div class="relative z-0 mb-6 w-full group">     
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
             </div>
             <button type="submit" class="text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
         </form>

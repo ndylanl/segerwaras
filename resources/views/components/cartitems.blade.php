@@ -23,7 +23,11 @@
         {{ $price }}
     </td>
     <td class="py-4 px-6">
-        <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+        <form action="{{ route("cartItem.destroy", ['cartItem'=>$id]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</button>
+        </form>
     </td>
 </tr>
 
