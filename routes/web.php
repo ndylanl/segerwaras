@@ -58,6 +58,10 @@ Route::get('/admind', [DistributorController::class, 'indexAdmin']);
 
 Route::get('/admind/{distributor}', [DistributorController::class, 'edit']);
 
+Route::get('/adminf', [PlantController::class, 'indexAdmin']);
+
+Route::get('/adminf/{plant}', [PlantController::class, 'edit']);
+
 Route::get('/berita', [BlogController::class, 'index']);
 
 Route::get('/berita/{blog}',[BlogController::class, 'show']);
