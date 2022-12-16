@@ -60,16 +60,27 @@
             <form action="" class="w-full">
                 <div class="mb-3">
                     <label for="">Comment</label>
-                    <textarea name="content" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"></textarea>
-                    @if ($errors->has('content'))
-                        <p class="text-danger">{{ $errors->first('content') }}</p>
-                    @endif
-                    <button type="submit" class="bg-green-300 rounded py-2 px-4 mt-2 hover:bg-green-500 hover:ring-2 hover:ring-green-500">Submit</button>
+                    <textarea name="content" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500"></textarea>
+                    <div class="w-full flex justify-between">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" />
+                            <label for="star1" title="text">1 star</label>
+                          </div>
+                          <button type="submit" class="bg-green-300 rounded py-2 px-4 mt-2 hover:bg-green-500 hover:ring-2 hover:ring-green-500">Submit</button>
+                    </div>
                 </div>
             </form>
             @endauth
             @foreach ($product->reviews as $r)
-                <div class="bg-gray-50 rounded shadow-lg p-3 border border-gray-200 mb-4">
+                <div class="bg-gray-50 rounded shadow-lg p-3 border float-none border-gray-200 mb-4">
                     <div class="flex mt-2">
                         <div class="flex items-center">
                             @for ($i = 0; $i < 5; $i++)
