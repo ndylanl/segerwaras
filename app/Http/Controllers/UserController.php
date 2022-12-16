@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class ReviewController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        return view('admin.adminreviews' ,[
-            'title' => "Admin Review",
-            'reviews' => Review::all()
+        return view('admin.adminusers', [
+            'title' => "Admin Users",
+            'users' => User::all()
         ]);
     }
 
@@ -32,6 +31,19 @@ class ReviewController extends Controller
     }
 
     /**
+     * Switch the roles of user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function switch(User $user)
+    {
+        $user->update([
+            'role' => $user->role == "admin" ? "member" : "admin"
+        ]);
+        return redirect('/adminu');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -39,26 +51,16 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'content' => "required",
-            'score' => "required"
-        ]);
-        Review::create([
-            'content' => $request->content,
-            'score' => $request->score,
-            'user_id' => Auth::id(),
-            'product_id' => $request->product_id
-        ]);
-        return redirect('/products/'.$request->product_id);
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Review  $review
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+    public function show(User $user)
     {
         //
     }
@@ -66,10 +68,10 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Review  $review
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Review $review)
+    public function edit(User $user)
     {
         //
     }
@@ -78,27 +80,26 @@ class ReviewController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Review  $review
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Review $review)
+    public function update(Request $request, User $user)
     {
-        $review->update([
-            'content' => $request->content,
-            'score' => $request->score,
+        $user->update([
+            'role' => $user->role == "admin" ? "member" : "admin"
         ]);
-        return redirect('/');
+        return redirect('/adminu');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Review  $review
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy(User $user)
     {
-        $review->delete();
-        return redirect('/adminr');
+        $user->delete();
+        return redirect('/adminu');
     }
 }

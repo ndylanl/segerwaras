@@ -17,7 +17,10 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.admintransaction', [
+            'title' => 'Admin Transaction',
+            'transactions' => Transaction::all()
+        ]);
     }
 
     /**
@@ -87,7 +90,10 @@ class TransactionController extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        //
+        return view('admin.updatetransaction', [
+            'title' => 'Update Transaction',
+            'transaction' => $transaction
+        ]);
     }
 
     /**
@@ -107,9 +113,10 @@ class TransactionController extends Controller
             'city' => $request->city,
             'zip' => $request->zip,
             'province' => $request->province,
-            'phoneNumber' => $request->phone_number,
+            'phoneNumber' => $request->phone,
+            'status' => $request->status
         ]);
-        return redirect('/');
+        return redirect('/admint');
     }
 
     /**
@@ -121,6 +128,6 @@ class TransactionController extends Controller
     public function destroy(Transaction $transaction)
     {
         $transaction->delete();
-        return redirect('/');
+        return redirect('/admint');
     }
 }

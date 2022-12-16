@@ -24,9 +24,6 @@
                     <td>{{ $review->product->name }}</td>
                     <td>{{ $review->user->name }}</td>
                     <td class="p-2">
-                        <a href="{{ route('review.edit', ['review' => $review]) }}" class="bg-green-300 rounded-md p-3 w-full">
-                            Update
-                        </a>
                         <form action="{{route("review.destroy", $review->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
