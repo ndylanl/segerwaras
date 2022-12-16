@@ -24,11 +24,11 @@
                 @csrf
                 <div class="grid grid-cols-3 w-fit mt-28">
 
-                    <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
+                    <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
                         -
                     </button>
                     <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
-                    <button class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
+                    <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
                         +
                     </button>
 
@@ -53,13 +53,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('add').addEventListener('click', function() {
-                if(document.getElementById('number').value != "{{ $product['unitStock'] }}"){
-                    document.getElementById('number').value++;
+                if(document.getElementById('quantity').value != "{{ $product['unitStock'] }}"){
+                    document.getElementById('quantity').value++;
                 }
             });
             document.getElementById('substract').addEventListener('click', function() {
-                if(document.getElementById('number').value != 0){
-                    document.getElementById('number').value--;
+                if(document.getElementById('quantity').value != 0){
+                    document.getElementById('quantity').value--;
                 }
             });
         });

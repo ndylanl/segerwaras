@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LogoutController;
-use App\Models\Transaction;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +29,7 @@ Route::resource('distributor', DistributorController::class);
 Route::resource('product', ProductController::class);
 Route::resource('review', ReviewController::class);
 Route::resource('cart', CartController::class);
-Route::resource('transaction', Transaction::class);
+Route::resource('transaction', TransactionController::class);
 Route::resource('cartItem', CartItemController::class);
 
 Route::get('/', function () {
@@ -64,11 +64,7 @@ Route::get('/berita/{blog}',[BlogController::class, 'show']);
 
 Route::get('/products/{product}', [ProductController::class, 'show']);
 
-Route::get('/cart', function(){
-    return view('visitor.cart', [
-        'title' => 'Shopping Cart'
-    ]);
-});
+Route::get('/cart', [CartController::class, 'show']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform']);

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
 use App\Models\User;
@@ -41,13 +40,21 @@ class CartItemController extends Controller
     {
         $user = User::find(Auth::id());
         $product = Product::find($request->product);
+        $cart = $user->carts->last();
 
         CartItem::create([
             'quantity' => $request->quantity,
             'price' => $product->price,
-            'cart_id' => $user->carts->last()->id,
+            'cart_id' => $cart->id,
             'product_id' => $product->id
         ]);
+
+        $cart->totalPrice = $cart->totalPrice + $product->price;
+        $cart->save();
+
+        $product->unitStock = $product->unitStock - $request->quantity;
+        $product->save();
+
         return redirect('/');
     }
 
@@ -96,5 +103,6 @@ class CartItemController extends Controller
     public function destroy(CartItem $cartItem)
     {
         $cartItem->delete();
+        return redirect('cart');
     }
 }
