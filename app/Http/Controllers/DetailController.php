@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail;
-use App\Models\Distributor;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -34,19 +33,20 @@ class DetailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Distributor $distributor)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'location' => "required|string|max:255",
-            'timeOpen' => "required",
-            'timeClosed' => "required"
+            'open' => "required",
+            'closed' => "required"
         ]);
         Detail::create([
             'location' => $request->location,
             'timeOpen' => $request->open,
             'timeClosed' => $request->closed,
-            'distributor_id' => $distributor->id
+            'distributor_id' => $request->id
         ]);
+        return redirect('/distributor/'.$request->id.'/edit');
     }
 
     /**
@@ -68,7 +68,10 @@ class DetailController extends Controller
      */
     public function edit(Detail $detail)
     {
-        //
+        return view('admin.updatedetail', [
+            'title' => "Update Detail",
+            'detail' => $detail
+        ]);
     }
 
     /**
@@ -85,6 +88,7 @@ class DetailController extends Controller
             'timeOpen' => $request->open,
             'timeClosed' => $request->closed,
         ]);
+        return redirect('/distributor/'.$detail->distributor->id.'/edit');
     }
 
     /**
@@ -96,5 +100,6 @@ class DetailController extends Controller
     public function destroy(Detail $detail)
     {
         $detail->delete();
+        return redirect('/distributor/'.$detail->distributor->id.'/edit');
     }
 }

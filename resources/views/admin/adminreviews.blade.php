@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-3xl font-black">Distributor</h1>
+<h1 class="text-3xl font-black">Reviews</h1>
 
     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-400 mt-6">
         <thead class="text-md text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

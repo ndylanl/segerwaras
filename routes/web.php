@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\DistributorController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
@@ -35,6 +36,7 @@ Route::resource('transaction', TransactionController::class);
 Route::resource('cartItem', CartItemController::class);
 Route::resource('user', UserController::class);
 Route::resource('tag', TagController::class);
+Route::resource('detail', DetailController::class);
 
 
 Route::get('/', [ProductController::class, 'indexIndex']);

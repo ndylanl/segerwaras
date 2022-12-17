@@ -43,6 +43,7 @@ class TagController extends Controller
         Tag::create([
             'tag' => $request->tag
         ]);
+        return redirect('/adminp');
     }
 
     /**
