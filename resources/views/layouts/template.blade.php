@@ -197,13 +197,13 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">CONTACT</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">+62 827-482-889</a>
+                            <a href="#" class="hover:underline hover:text-black text-sm">+62 827-482-889</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">+62 347-194-743</a>
+                            <a href="#" class="hover:underline hover:text-black text-sm">+62 347-194-743</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">segerwaras@gmail.com</a>
+                            <a href="#" class="hover:underline hover:text-black text-sm">segerwaras@gmail.com</a>
                         </li>
                     </ul>
                 </div>

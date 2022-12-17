@@ -7,14 +7,14 @@
 
 
 <div class="bg-neutral-50">
-    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
-        <hr class="my-8 w-[68rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">VISI & MISI</span>
+    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-24">
+        <hr class="my-8 md:w-[68rem]  h-px bg-green-800 border-0">
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-8 md:px-28 text-center">VISI & MISI</span>
     </div>
 
 
     {{--visi and misi--}}    
-    <div class="mx-auto w-1/2 mt-10">
+    <div class="md:mx-auto md:w-1/2 mx-8 mt-10">
         <p class="text-center">
             Menjadi perusahaan farmasi hijau terkemuka Indonesia yang mendorong kualitas hidup melalui penelitian, pengembangan, dan pemasaran obat-obatan berkualitas tinggi.        
         </p>
@@ -64,8 +64,8 @@
             <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
             <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-14">See our Distributors</span>
         </div>
-        <div class="flex justify-center">
-            <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
+        <div class="flex justify-center flex-col-reverse md:flex-row">
+            <div id="default-carousel" class="relative w-full " data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
 
@@ -88,7 +88,7 @@
                     </span>
                 </button>
             </div>
-            <div class="w-full lg:w-1/4 m-4">
+            <div class="w-full lg:w-1/4 mt-8 mx-auto">
                 <img src="img/pabrik.jpg" alt="" class="w-full h-auto">
             </div>
         </div>
@@ -101,11 +101,11 @@
             <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
             <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-14">See our Factories</span>
         </div>
-        <div class="flex justify-center">
-            <div class="w-full lg:w-1/4 m-4">
+        <div class="flex justify-center flex-col md:flex-row">
+            <div class="w-full lg:w-1/4 mt-8 mx-auto">
                 <img src="img/pabrik.jpg" alt="" class="w-full h-auto">
             </div>
-            <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
+            <div id="default-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
 

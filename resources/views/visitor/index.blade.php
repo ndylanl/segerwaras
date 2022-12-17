@@ -21,7 +21,7 @@
     <div class="flex justify-center">
         <div id="default-carousel" class="relative w-full md:mx-32" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative md:h-[60vh] md:overflow-hidden rounded-lg">
+            <div class="relative md:h-[60vh] overflow-hidden rounded-lg">
                 @foreach ($products as $product)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="w-full h-full flex flex-col md:flex-row justify-between p-10">
