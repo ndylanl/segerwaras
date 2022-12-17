@@ -15,7 +15,10 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.adminreviews' ,[
+            'title' => "Admin Review",
+            'reviews' => Review::all()
+        ]);
     }
 
     /**
@@ -93,9 +96,15 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Review $review)
+    public function destroyuser(Request $request, Review $review)
     {
         $review->delete();
         return redirect('/products/'.$request->product_id);
+    }
+
+    public function destroy(Request $request, Review $review)
+    {
+        $review->delete();
+        return redirect('/adminr');
     }
 }

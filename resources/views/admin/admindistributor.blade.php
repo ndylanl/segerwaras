@@ -26,7 +26,7 @@
                     </td>
                     <td>{{ $dis['user_id'] }}</td>
                     <td class="p-2">
-                        <a href="admind/{{ $dis->id }}" class="bg-green-300 rounded-md p-3 w-full">
+                        <a href="{{ route('distributor.edit', ['distributor' => $dis]) }}" class="bg-green-300 rounded-md p-3 w-full">
                             Update
                         </a>
                         <form action="{{route("distributor.destroy", $dis->id) }}" method="POST">

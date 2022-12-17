@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::resource('review', ReviewController::class);
 Route::resource('cart', CartController::class);
 Route::resource('transaction', TransactionController::class);
 Route::resource('cartItem', CartItemController::class);
+Route::resource('user', UserController::class);
+
 
 Route::get('/', [ProductController::class, 'indexIndex']);
 
@@ -40,15 +43,17 @@ Route::get('/aboutus', [DistributorController::class, 'index']);
 
 Route::get('/adminp', [ProductController::class, 'indexAdmin']);
 
-Route::get('/adminp/{product}', [ProductController::class, 'edit']);
-
 Route::get('/adminb', [BlogController::class, 'indexAdmin']);
 
 Route::get('/admind', [DistributorController::class, 'indexAdmin']);
 
-Route::get('/admind/{distributor}', [DistributorController::class, 'edit']);
-
 Route::get('/adminf', [PlantController::class, 'indexAdmin']);
+
+Route::get('/adminr', [ReviewController::class, 'index']);
+
+Route::get('/admint', [TransactionController::class, 'index']);
+
+Route::get('/adminu', [UserController::class, 'index']);
 
 Route::get('/berita', [BlogController::class, 'index']);
 
@@ -61,9 +66,6 @@ Route::get('/cart', [CartController::class, 'show']);
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform']);
  });
-
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
