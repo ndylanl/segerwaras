@@ -106,7 +106,7 @@
                     <div class="bg-gray-50 rounded shadow-lg p-3 border float-none border-gray-200 mb-4">
                         <div class="flex justify-between">
                             <label for="" class="ml-2">Your Comment</label>
-                            <form action="{{ route('review.destroy', ["review"=>$r]) }}" method="POST" enctype="multipart/form-data" class="-mt-2 mb-2">
+                            <form action="{{ route('review.show', ["review"=>$r]) }}" method="POST" enctype="multipart/form-data" class="-mt-2 mb-2">
                                 @csrf
                                 @method('DELETE')
                                 <input type="hidden" name="product_id" value="{{ $product['id'] }}">

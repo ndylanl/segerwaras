@@ -58,9 +58,11 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+
+    public function show(Request $request, Review $review)
     {
-        //
+        $review->delete();
+        return redirect('/products/'.$request->product_id);
     }
 
     /**
@@ -96,11 +98,7 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroyuser(Request $request, Review $review)
-    {
-        $review->delete();
-        return redirect('/products/'.$request->product_id);
-    }
+
 
     public function destroy(Request $request, Review $review)
     {
