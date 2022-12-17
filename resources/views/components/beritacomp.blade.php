@@ -1,6 +1,9 @@
 <div class="max-w-sm bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div class="p-5">
-        <p>{{ $date }}</p>
+        <div class="flex">
+            <img src="/img/calendarIcon.png" alt="">
+            <p class="ml-2 mt-1 text-gray-600">{{ $date }}</p>
+        </div>
         <div>
             <h5 class="mt-4 mb-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $title }}</h5>
         </div>

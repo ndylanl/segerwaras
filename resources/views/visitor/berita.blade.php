@@ -21,7 +21,10 @@
         <div class="flex flex-col md:mx-auto mx-8 items-center bg-white border rounded-lg shadow-md md:flex-row md:w-3/4">
             <img class="object-cover hidden md:block w-full rounded-t-lg m-4 h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/img/sgrwrsCap.png" alt="">
             <div class="p-5">
-                <p>{{ $br['updated_at'] }}</p>
+                <div class="flex">
+                    <img src="/img/calendarIcon.png" alt="">
+                    <p class="ml-2 mt-1 text-gray-600">{{ $br['updated_at']->format('m/d/Y') }}</p>
+                </div>
                 <div>
                     <h5 class="mt-4 mb-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $br['title'] }}</h5>
                 </div>
@@ -45,7 +48,7 @@
             @if ($loop->first)
 
                 @else
-                <x-beritacomp :date="$br['updated_at']" :title="$br['title']" link="berita/{{ $br->id }}"/>
+                <x-beritacomp :date="$br['updated_at']->format('m/d/Y')" :title="$br['title']" link="berita/{{ $br->id }}"/>
 
             @endif
         @endforeach
