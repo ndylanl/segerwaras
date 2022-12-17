@@ -65,6 +65,12 @@ Route::get('/products/{product}', [ProductController::class, 'show']);
 
 Route::get('/cart', [CartController::class, 'show']);
 
+Route::get('/profile', function(){
+    return view('visitor.editprofile', [
+        'title' => "Profile",
+    ]);
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/logout', [LogoutController::class, 'perform']);
  });
