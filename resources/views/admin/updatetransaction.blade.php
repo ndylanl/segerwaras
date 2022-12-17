@@ -5,11 +5,37 @@
 @section('content')
 
 <div class="p-10">
+
+    <h1 class="text-3xl font-black pt-2">Detail</h1>
+
+    <table class="w-full text-sm text-left text-gray-800 dark:text-gray-400 mt-6 pb-10">
+        <thead class="text-md text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($transaction->cart->cartItems as $item)
+                <tr  class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th>{{ $loop->iteration }}</th>
+                    <td>{{ $item->product->name }}</td>
+                    <td>{{ $item->quantity }}</td>
+                    <td>{{ $item->price }}</td>
+                    <td>{{ $item->quantity * $item->price }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
     <form action="{{ route('transaction.update', ["transaction"=>$transaction]) }}" method="POST" enctype="multipart/form-data">
 
         @csrf
         @method('PATCH')
-        <div class="relative z-0 mb-6 w-full group">
+        <div class="relative z-0 mt-10 mb-6 w-full group">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
             <input value="{{ $transaction->name }}" type="text" name="name" id="name" class="bg-slate-50 rounded-lg border p-2.5 border-gray-300 block py-2.5 w-full text-sm text-gray-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         </div>
