@@ -172,13 +172,13 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">CONTACT</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">+62 555-555-555</a>
+                            <a href="#" class="hover:underline hover:text-black">+62 827-482-889</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">+62 555-555-555</a>
+                            <a href="#" class="hover:underline hover:text-black">+62 347-194-743</a>
                         </li>
                         <li class="mb-4">
-                            <a href="#" class="hover:underline hover:text-black">email@email.com</a>
+                            <a href="#" class="hover:underline hover:text-black">segerwaras@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -186,7 +186,7 @@
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Subscribe to newsletter</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque minus.</p>
+                            <p>Dapatkan berita terkini dan informasi ekslusif untuk pelanggan yang berharga dengan berlangganan ke newsletter kami.</p>
                         </li>
                         <li>
                             <form action="" class="flex">

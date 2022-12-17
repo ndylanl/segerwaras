@@ -84,7 +84,7 @@ class ReviewController extends Controller
             'content' => $request->content,
             'score' => $request->score,
         ]);
-        return redirect('/');
+        return redirect('/products/'.$request->product_id);
     }
 
     /**
@@ -93,9 +93,9 @@ class ReviewController extends Controller
      * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy(Request $request, Review $review)
     {
         $review->delete();
-        return redirect('/');
+        return redirect('/products/'.$request->product_id);
     }
 }

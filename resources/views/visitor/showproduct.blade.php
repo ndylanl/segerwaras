@@ -64,16 +64,16 @@
                     <textarea name="content" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500"></textarea>
                     <div class="w-full flex justify-between">
                         <div class="rate">
-                            <input type="radio" id="star5" name="score" value="5" />
-                            <label for="star5" title="text">5 stars</label>
-                            <input type="radio" id="star4" name="score" value="4" />
-                            <label for="star4" title="text">4 stars</label>
-                            <input type="radio" id="star3" name="score" value="3" />
-                            <label for="star3" title="text">3 stars</label>
-                            <input type="radio" id="star2" name="score" value="2" />
-                            <label for="star2" title="text">2 stars</label>
-                            <input type="radio" id="star1" name="score" value="1" />
-                            <label for="star1" title="text">1 star</label>
+                            <input type="radio" id="starr5" name="score" value="5" />
+                            <label for="starr5" title="text">5 stars</label>
+                            <input type="radio" id="starr4" name="score" value="4" />
+                            <label for="starr4" title="text">4 stars</label>
+                            <input type="radio" id="starr3" name="score" value="3" />
+                            <label for="starr3" title="text">3 stars</label>
+                            <input type="radio" id="starr2" name="score" value="2" />
+                            <label for="starr2" title="text">2 stars</label>
+                            <input type="radio" id="starr1" name="score" value="1" />
+                            <label for="starr1" title="text">1 star</label>
                           </div>
                           <input type="hidden" name="product_id" value="{{ $product['id'] }}">
                           <button type="submit" class="bg-green-300 rounded py-2 px-4 mt-2 hover:bg-green-500 hover:ring-2 hover:ring-green-500">Submit</button>
@@ -81,8 +81,9 @@
                 </div>
             </form>
             @endauth
-            
+            <hr class="mb-2">
             @foreach ($product->reviews->reverse() as $r)
+                @if ($r->user != Auth:: user())
                 <div class="bg-gray-50 rounded shadow-lg p-3 border float-none border-gray-200 mb-4">
                     <div class="flex mt-2">
                         <div class="flex items-center">
@@ -99,6 +100,48 @@
                     <p class="-mt-6 text-end">{{ $r->user['name'] }}</p>
                     <p class="mt-2">{{ $r['content'] }}</p>
                 </div>
+                @endif  
+                @if ($r->user == Auth:: user())
+                
+                    <div class="bg-gray-50 rounded shadow-lg p-3 border float-none border-gray-200 mb-4">
+                        <div class="flex justify-between">
+                            <label for="" class="ml-2">Your Comment</label>
+                            <form action="{{ route('review.destroy', ["review"=>$r]) }}" method="POST" enctype="multipart/form-data" class="-mt-2 mb-2">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                                <button type="submit" class="bg-red-500 text-white last:rounded py-1 px-2 text-sm mt-2 hover:bg-red-700 hover:ring-2 hover:ring-red-700">X</button>
+                            </form>
+                        </div>
+                        <form action="{{ route('review.update', ["review"=>$r]) }}" method="POST" enctype="multipart/form-data">
+
+                            @csrf
+                            @method('PATCH')
+                        <textarea name="content" rows="2" class="block p-2.5 w-full text-gray-900 bg-white rounded-lg border-gray-200 focus:ring-green-500 focus:border-green-500">{{ $r['content'] }}</textarea>
+                        <div class="w-full flex justify-between">
+                            <div class="rate">
+                                <input type="radio" id="star{{ $r['id'] }}5" name="score" value="5" />
+                                <label for="star{{ $r['id'] }}5" title="text">5 stars</label>
+                                <input type="radio" id="star{{ $r['id'] }}4" name="score" value="4" />
+                                <label for="star{{ $r['id'] }}4" title="text">4 stars</label>
+                                <input type="radio" id="star{{ $r['id'] }}3" name="score" value="3" />
+                                <label for="star{{ $r['id'] }}3" title="text">3 stars</label>
+                                <input type="radio" id="star{{ $r['id'] }}2" name="score" value="2" />
+                                <label for="star{{ $r['id'] }}2" title="text">2 stars</label>
+                                <input type="radio" id="star{{ $r['id'] }}1" name="score" value="1" />
+                                <label for="star{{ $r['id'] }}1" title="text">1 star</label>
+                              </div>
+                              <input type="hidden" name="product_id" value="{{ $product['id'] }}">
+                              <button type="submit" class="bg-green-300 rounded py-2 px-4 mt-2 hover:bg-green-500 hover:ring-2 hover:ring-green-500">Edit</button>
+                        </div>
+                    </form>
+                    </div>                
+                
+                <script>
+                    document.getElementById("star{{ $r['id'] }}{{ floor($r['score']) }}").checked = true;
+                </script>
+                @endif
+                
             @endforeach
         </div>
     </div>

@@ -73,16 +73,14 @@
 <div id="3" class="bg-neutral-50 h-fit">
     <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20 lg:mx-0">
         <div class="w-full pt-6 lg:pl-6 px-10">
-            <h4 class="text-3xl font-bold md:mb-10">Contact Us</h4>
-            <p class="mt-3 md:mt-6 lg:mr-12">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Laudantium perferendis recusandae neque architecto doloremque culpa voluptas, 
-                et consequuntur voluptates ab excepturi, autem labore possimus qui. 
-                Ipsa eaque impedit adipisci doloribus. <br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Laudantium perferendis recusandae neque architecto doloremque culpa voluptas, 
-                et consequuntur voluptates ab excepturi, autem labore possimus qui. 
-                Ipsa eaque impedit adipisci doloribus.
+            <h4 class="text-3xl font-bold md:mb-6">Contact Us</h4>
+            <p class="mt-3 lg:mr-12">
+                Salam sejahtera, di situs web kami, Anda akan menemukan kontak profesional yang 
+                siap membantu Anda dengan kebutuhan Anda. Dengan mengisi formulir kontak kami, Anda 
+                dapat dengan mudah mencapai tim support kami. <br> <br>
+                Langkah awal yang harus Anda lakukan adalah untuk mengisi formulir dan menyertakan 
+                rincian kontak Anda, sehingga kami dapat menghubungi Anda dengan informasi yang Anda 
+                butuhkan dan memberikan jawaban atas pertanyaan yang Anda miliki. Kami tunggu kehadiran Anda.
             </p>
         </div>
         <div class="w-full p-8">
