@@ -7,12 +7,12 @@
 
 
 <div class="bg-neutral-50 pb-12">
-    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-20">
-        <hr class="my-8 w-[68rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">PRODUK</span>
+    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
+        <hr class="my-8 w-[48rem] md:w-[68rem] h-px bg-green-800 border-0">
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2  px-8 md:px-28">PRODUK</span>
     </div>
 
-    <div class="w-full flex flex-col lg:flex-row mt-20">
+    <div class="w-full flex flex-col lg:flex-row mt-8 md:mt-20">
         <div class="lg:w-1/4 md:ml-8">
             <form action="/products" method="GET" class="w-full px-4">
                 <input type="search" name="search" class="focus:ring-2 focus:ring-green-500 w-full border-gray-400">

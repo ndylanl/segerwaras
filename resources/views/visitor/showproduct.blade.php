@@ -14,7 +14,7 @@
 
     <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-10 bg-neutral-50">
         <img src="/img/products/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto mt-10">
-        <div class="mt-16 lg:h-96">
+        <div class="mt-16 lg:h-96 px-10 md:p-0">
             <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
             <p class="mt-8">{{ $product['description'] }}</p>
             <p class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="bg-neutral-50 px-20 pb-20">
+    <div class="bg-neutral-50 pt-8 md:pt-0 px-4 md:px-20 pb-20">
         <div class="border border-gray-300 px-5 pt-5 pb-10 mx-auto bg-white rounded-lg shadow-md md:w-3/4">
             @auth
             <form action="{{ route('review.store') }}" method="POST"  class="w-full">

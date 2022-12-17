@@ -12,14 +12,25 @@
 
 {{-- this produk teaser --}}
 
-<div id="2" class="min-h-screen bg-neutral-50">
+<div id="2" class="md:min-h-screen bg-neutral-50">
     <div class="inline-flex justify-center items-center w-full mt-10">
         <hr class="my-8 md:w-[68rem] w-72 h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-8 md:px-28 text-center">PRODUK KAMI</span>
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-8 md:px-28 text-center">PRODUK FAVORIT</span>
     </div>
 
-    <div class="flex justify-center">
-        <div id="default-carousel" class="relative w-full md:mx-32" data-carousel="static">
+    <div class="grid grid-cols-2 mx-6 gap-8 gap-y-8 mt-8 md:hidden">
+        @foreach ($products as $product)
+        <div class="w-full relative">
+            <a href="">
+                <img src="img/products/{{ $product->cover }}" alt="" class="w-full h-full shadow-lg border border-green-100">
+                <p class="text-lg font-semibold">{{ $product->name }}</p>
+            </a>
+        </div>
+        @endforeach
+    </div>
+
+    <div class="md:flex justify-center hidden">
+        <div id="default-carousel" class="relative w-full mx-5 md:mx-32" data-carousel="static">
             <!-- Carousel wrapper -->
             <div class="relative md:h-[60vh] overflow-hidden rounded-lg">
                 @foreach ($products as $product)
