@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="bg-neutral-50">
-    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
+    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-24">
         <hr class="my-8 w-[15rem] md:w-[68rem] h-px bg-green-800 border-0">
         <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">SHOPPING CART</span>
     </div>
@@ -18,9 +18,6 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="py-3 px-6">
-                                <span class="sr-only">Image</span>
-                            </th>
                             <th scope="col" class="py-3 px-6">
                                 Product
                             </th>
@@ -47,8 +44,16 @@
 
 
         <hr class="my-8 h-px bg-green-600 border-0 mx-auto">
-        <div class="h-16 bg-red-200">
-
+        <div class="h-16">
+            <?php
+                $totalCost = 0; 
+            ?>
+            @foreach ($cart->cartItems as $pr)
+                <?php
+                $totalCost += $pr->quantity*$pr->price;
+                ?>
+            @endforeach
+            <p class="text-end font-semibold text-gray-900 md:text-center md:text-2xl">Total Anda Rp.{{ $totalCost }}</p>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100" style="background-color: #ecf6ed;
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-44 sm:pt-0 bg-gray-100 px-4 md:px-0" style="background-color: #ecf6ed;
 opacity: 1;
 background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ecf6ed 40px ), repeating-linear-gradient( #ffffff55, #ffffff );">
     <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
