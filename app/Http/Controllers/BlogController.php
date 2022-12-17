@@ -83,7 +83,8 @@ class BlogController extends Controller
     {
         return view('visitor.showberita', [
             'title' => "Show Blog",
-            'berita' => $blog
+            'berita' => $blog,
+            'beritas' => Blog::all()
         ]);
     }
 

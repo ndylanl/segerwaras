@@ -19,7 +19,7 @@
       }
       .rate {
         float: left;
-        height: 46px;
+        height: 26px;
         padding: 0 10px;
         }
         .rate:not(:checked) > input {

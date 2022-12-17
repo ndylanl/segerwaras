@@ -24,7 +24,7 @@
     </div>
 
     {{--sejarah--}}    
-    <div class="w-4/5 my-16 h-fit mx-auto relative">
+    {{-- <div class="w-4/5 my-16 h-fit mx-auto relative">
         <div class="bg-gray-600 rounded-full h-full w-1 absolute left-1/2"></div>
 
         <div class="block md:grid md:grid-cols-2 gap-y-4 h-fit mx-auto bg-red-200 p-2">
@@ -53,14 +53,17 @@
                 img
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 
 
     {{--distributor carousel--}}    
-    <div class="w-3/4 mx-auto">
-        <div class="text-2xl text-center font-extrabold mx-auto w-full mt-10">See our Distributors</div>
+    <div class="mx-auto w-9/12">
+        <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
+            <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
+            <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-14">See our Distributors</span>
+        </div>
         <div class="flex justify-center">
             <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
                 <!-- Carousel wrapper -->
@@ -85,14 +88,23 @@
                     </span>
                 </button>
             </div>
+            <div class="w-full lg:w-1/4 m-4">
+                <img src="img/pabrik.jpg" alt="" class="w-full h-auto">
+            </div>
         </div>
     </div>
 
     {{--Plant carousel--}}    
 
-    <div class="w-3/4 mx-auto">
-        <div class="text-2xl text-center font-extrabold mx-auto w-full mt-10">See our Factories</div>
+    <div class="w-9/12 mx-auto">
+        <div class="inline-flex justify-center items-center w-full">
+            <hr class="my-8 w-[50rem] h-px bg-green-800 border-0">
+            <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-14">See our Factories</span>
+        </div>
         <div class="flex justify-center">
+            <div class="w-full lg:w-1/4 m-4">
+                <img src="img/pabrik.jpg" alt="" class="w-full h-auto">
+            </div>
             <div id="default-carousel" class="relative w-4/5" data-carousel="slide">
                 <!-- Carousel wrapper -->
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
