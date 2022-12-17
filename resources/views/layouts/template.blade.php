@@ -83,11 +83,12 @@
             <a href="/logout" class="hidden lg:block text-white mx-3 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                 Logout
             </a>
-
+            @if (Auth:: user() != NULL)
             @if (Auth:: user()->role == 'admin')
             <a href="/adminp" class="hidden lg:block text-white mx-3 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                 AdminPanel
             </a>
+            @endif
             @endif
             @endauth
 
@@ -124,11 +125,14 @@
                         BERITA
                     </a>
                 </li>
-                <li>
-                    <a href="/login" class="block md:hidden py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                        LOGIN
-                    </a>
-                </li>
+                @guest
+                    <li>
+                        <a href="/login" class="block md:hidden py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            LOGIN
+                        </a>
+                    </li>
+                @endguest
+                
                 <li>
                     <a href="/cart" class="block md:hidden py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
                         CART
@@ -139,12 +143,15 @@
                         PROFILE
                     </a>
                 </li>
+                @if (Auth:: user() != NULL)
+
                 @if (Auth:: user()->role == 'admin')
                 <li>
-                    <a href="/adminp" class="hidden lg:block text-white mx-3 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                        AdminPanel
+                    <a href="/adminp" class="block md:hidden py-2 pl-3 pr-4 text-gray-100 rounded bg-red-600 hover:bg-red-700 md:hover:bg-transparent md:hover:text-green-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                        ADMIN PANEL
                     </a>
                 </li>
+                @endif
                 @endif
             </ul>
         </div>
