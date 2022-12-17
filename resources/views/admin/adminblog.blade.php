@@ -2,7 +2,10 @@
 
 @section('content')
 
-<h1 class="text-3xl font-black">Berita</h1>
+<div class="inline-flex space-x-96">
+    <h1 class="text-3xl font-black">Berita</h1>
+    <a href="{{ route('blog.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Berita</a>
+</div>
 
     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-400 mt-6">
         <thead class="text-md text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

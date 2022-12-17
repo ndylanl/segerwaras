@@ -2,7 +2,10 @@
 
 @section('content')
 
-<h1 class="text-3xl font-black">Factories</h1>
+<div class="inline-flex space-x-96">
+    <h1 class="text-3xl font-black pt-2">Factories</h1>
+    <a href="{{ route('plant.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Factory</a>
+</div>
 
     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-400 mt-6">
         <thead class="text-md text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -10,7 +13,6 @@
                 <th>No</th>
                 <th>Name</th>
                 <th>Desc</th>
-                <th>Image</th>
                 <th>Created By</th>
                 <th>Action</th>
             </tr>
@@ -21,9 +23,6 @@
                     <th>{{ $loop->iteration }}</th>
                     <td>{{ $dis['name'] }}</td>
                     <td>{{ $dis['description'] }}</td>
-                    <td>
-                        <img src="/img/sgrwrsCap.png" style="width: 100px; height: 100px">
-                    </td>
                     <td>{{ $dis['user_id'] }}</td>
                     <td class="p-2">
                         <a href="{{ route('plant.edit', ['plant'=>$dis]) }}" class="bg-green-300 rounded-md p-3 w-full">
