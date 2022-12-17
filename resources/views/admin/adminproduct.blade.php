@@ -2,7 +2,13 @@
 
 @section('content')
 
-<h1 class="text-3xl font-black">Product</h1>
+<div class="inline-flex space-x-80">
+    <h1 class="text-3xl font-black pt-2">Product</h1>
+    <div>
+        <a href="{{ route('product.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Product</a>
+        <a href="{{ route('tag.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Tag</a>
+    </div>
+</div>
 
     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-400 mt-6">
         <thead class="text-md text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -12,7 +18,7 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th>Stock</th>
-                <th>Price</th>
+                <th>Image</th>
                 <th>Visibility</th>
                 <th>Action</th>
             </tr>
