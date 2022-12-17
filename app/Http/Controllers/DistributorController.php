@@ -82,7 +82,7 @@ class DistributorController extends Controller
      */
     public function show(Distributor $distributor)
     {
-        return view('', [
+        return view('visitor.showdistributor', [
             'title' => "Show Distributor",
             'distributor' => $distributor
         ]);

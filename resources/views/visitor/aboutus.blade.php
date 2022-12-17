@@ -70,7 +70,7 @@
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
 
                     @foreach ($distributor as $dist)
-                    <x-carouselItem :name="$dist['name']" :desc="$dist['description']"/>
+                    <x-carouselItem :name="$dist['name']" :desc="$dist['description']" whot="dist" :id="$dist->id"/>
                     @endforeach
 
                 </div>
@@ -110,7 +110,7 @@
                 <div class="relative h-[60vh] overflow-hidden rounded-lg">
 
                     @foreach ($plant as $pl)
-                    <x-carouselItem :name="$pl['name']" :desc="$pl['description']"/>
+                    <x-carouselItem :name="$pl['name']" :desc="$pl['description']" whot="fact" :id="$pl->id"/>
                     @endforeach
 
                 </div>
