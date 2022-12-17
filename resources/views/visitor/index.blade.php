@@ -14,14 +14,14 @@
 
 <div id="2" class="min-h-screen bg-neutral-50">
     <div class="inline-flex justify-center items-center w-full mt-10">
-        <hr class="my-8 w-[68rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">PRODUK KAMI</span>
+        <hr class="my-8 md:w-[68rem] w-72 h-px bg-green-800 border-0">
+        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-8 md:px-28 text-center">PRODUK KAMI</span>
     </div>
 
     <div class="flex justify-center">
-        <div id="default-carousel" class="relative w-4/5" data-carousel="static">
+        <div id="default-carousel" class="relative w-full md:mx-32" data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative h-[60vh] overflow-hidden rounded-lg">
+            <div class="relative md:h-[60vh] md:overflow-hidden rounded-lg">
                 @foreach ($products as $product)
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="w-full h-full flex flex-col md:flex-row justify-between p-10">
@@ -30,8 +30,8 @@
                         </div>
                         <div class="w-full lg:w-1/2 relative p-4">
                             <h4 class="text-3xl font-bold">{{ $product->name }}</h4>
-                            <p class="mt-16">{{ $product->description }}</p>
-                            <button class="lg:absolute lg:bottom-1 mt-5 text-white bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">See More</button>
+                            <p class="mt-4 md:mt-16 ">{{ $product->description }}</p>
+                            <button class="lg:absolute lg:bottom-1 mt-2 md:mt-5 text-white bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">See More</button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <div class="absolute z-30 -bottom-48 w-full px-12 grid grid-cols-4">
                     @foreach ($products as $product)
                     <button type="button" class="w-48 rounded-full" aria-current="false" aria-label="Slide {{ $loop->iteration }}" data-carousel-slide-to="{{ $loop->iteration }} - 1">
-                        <img src="img/products/{{ $product->cover }}" alt="" class="w-full h-auto shadow-lg border border-green-100">
+                        <img src="img/products/{{ $product->cover }}" alt="" class="w-full h-auto shadow-lg border border-green-50">
                     </button>
                     @endforeach
                 </div>
@@ -70,7 +70,7 @@
 
 {{-- this is contact us --}}  
 
-<div id="3" class="bg-neutral-50 h-fit">
+<div id="3" class="bg-neutral-50 h-fit pt-20 md:pt-1">
     <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20 lg:mx-0">
         <div class="w-full pt-6 lg:pl-6 px-10">
             <h4 class="text-3xl font-bold md:mb-6">Contact Us</h4>
