@@ -63,6 +63,8 @@ Route::get('/berita/{blog}',[BlogController::class, 'show']);
 
 Route::get('/products/{product}', [ProductController::class, 'show']);
 
+Route::get('/distributor/{distributor}', [DistributorController::class, 'show']);
+
 Route::get('/cart', [CartController::class, 'show']);
 
 Route::get('/profile', function(){
