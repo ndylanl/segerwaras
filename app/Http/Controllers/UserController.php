@@ -31,19 +31,6 @@ class UserController extends Controller
     }
 
     /**
-     * Switch the roles of user.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function switch(User $user)
-    {
-        $user->update([
-            'role' => $user->role == "admin" ? "member" : "admin"
-        ]);
-        return redirect('/adminu');
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

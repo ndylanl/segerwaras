@@ -65,6 +65,10 @@ Route::get('/products/{product}', [ProductController::class, 'show']);
 
 Route::get('/distributor/{distributor}', [DistributorController::class, 'show']);
 
+Route::get('/transactions', [TransactionController::class, 'indexUser']);
+
+Route::get('/transactions/{transaction}', [TransactionController::class, 'show']);
+
 Route::get('/cart', [CartController::class, 'show']);
 
 Route::get('/profile', function(){
