@@ -6,7 +6,7 @@
     <h1 class="text-3xl font-black pt-2">Product</h1>
     <div>
         <a href="{{ route('product.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Product</a>
-        <a href="" class="bg-green-300 rounded-md p-3 w-full">Create Tag</a>
+        <a href="{{ route('tag.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Tag</a>
     </div>
 </div>
 
