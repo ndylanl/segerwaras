@@ -10,7 +10,7 @@
 
     <h1 class="font-black text-3xl text-gray-800 text-center mx-auto mt-10 pt-20">{{ $berita['title'] }}</h1>
 
-    <div class="lg:w-3/5 h-fit mt-12  mx-8 md:mx-0">
+    <div class="lg:w-3/5 h-fit mt-12 mx-8 md:mx-auto">
         <div class="flex">
             <img src="/img/calendarIcon.png" alt="">
             <p class="ml-2 mt-1 text-gray-600">{{ $berita['updated_at']->format('m/d/Y') }}</p>

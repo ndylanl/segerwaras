@@ -4,6 +4,22 @@
 
 @section('content')
 
+
+@auth
+    @if (Auth:: user()->role != 'admin')
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endif
+    @endauth
+    @guest
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endguest
+
 <div class="p-10">
 
     <h1 class="text-3xl font-black pt-2">Detail</h1>
