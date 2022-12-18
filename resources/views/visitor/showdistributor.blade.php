@@ -33,7 +33,7 @@
                     <p class="ml-2 mt-1 text-gray-600">TIME: {{ $detail->timeOpen }} - {{ $detail->timeClosed }}</p>
                 </div>
                 <div>
-                    <h5 class="mt-4 mb-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Location:{{ $detail['location'] }}</h5>
+                    <h5 class="mt-4 mb-12 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Location:<br>{{ $detail['location'] }}</h5>
                 </div>
             </div>
         </div>

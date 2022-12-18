@@ -23,6 +23,14 @@ class TransactionController extends Controller
         ]);
     }
 
+    public function indexUser()
+    {
+        return view('visitor.transactions', [
+            'title' => 'Admin Transaction',
+            'transactions' => Transaction::where('user_id', '=', Auth::id())->whereIn('status', ['processing', 'done'])->get()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -79,7 +87,10 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        //
+        return view('visitor.showtransaction', [
+            'title' => "Transaction",
+            'transaction' => $transaction
+        ]);
     }
 
     /**
@@ -105,18 +116,25 @@ class TransactionController extends Controller
      */
     public function update(Request $request, Transaction $transaction)
     {
-        $transaction->update([
-            'status' => $request->status,
-            'name' => $request->name,
-            'message' => $request->message,
-            'address' => $request->address,
-            'city' => $request->city,
-            'zip' => $request->zip,
-            'province' => $request->province,
-            'phoneNumber' => $request->phone,
-            'status' => $request->status
-        ]);
-        return redirect('/admint');
+        if (Auth::user()->role == 'admin') {
+            $transaction->update([
+                'status' => $request->status,
+                'name' => $request->name,
+                'message' => $request->message,
+                'address' => $request->address,
+                'city' => $request->city,
+                'zip' => $request->zip,
+                'province' => $request->province,
+                'phoneNumber' => $request->phone,
+                'status' => $request->status
+            ]);
+            return redirect('/admint');
+        } else {
+            $transaction->update([
+                'status' => 'cancelled'
+            ]);
+            return redirect('/transactions');
+        }
     }
 
     /**
