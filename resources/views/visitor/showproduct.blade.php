@@ -15,7 +15,7 @@
         <div class="mt-16 lg:h-96 px-10 md:p-0">
             <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
             <p class="mt-8">{{ $product['description'] }}</p>
-            <p class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
+            <p id="unit" class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
             <?php
                 $attnum = 1;
             ?>
@@ -148,16 +148,16 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('add').addEventListener('click', function() {
-                if(document.getElementById('quantity').value != "{{ $product['unitStock'] }}"){
-                    document.getElementById('quantity').value++;
+    <script type="module">
+        $(document).ready(function () {
+            $("#add").click(function() {
+                if (parseInt($("#quantity").val()) < parseInt($("#unit").text())) {
+                    $("#quantity").val(parseInt($("#quantity").val()) + 1);
                 }
             });
-            document.getElementById('substract').addEventListener('click', function() {
-                if(document.getElementById('quantity').value != 0){
-                    document.getElementById('quantity').value--;
+            $("#substract").click(function() {
+                if (parseInt($("#quantity").val()) > 0) {
+                    $("#quantity").val(parseInt($("#quantity").val()) - 1);
                 }
             });
         });
