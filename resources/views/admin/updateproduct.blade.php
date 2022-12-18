@@ -4,6 +4,22 @@
 
 @section('content')
 
+
+@auth
+    @if (Auth:: user()->role != 'admin')
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endif
+    @endauth
+    @guest
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endguest
+
 <div class="p-10">
     <form action="{{ route('product.update', ['product'=>$product]) }}" method="POST" enctype="multipart/form-data">
 

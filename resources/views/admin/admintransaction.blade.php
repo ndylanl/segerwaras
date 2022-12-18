@@ -1,6 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
+@auth
+    @if (Auth:: user()->role != 'admin')
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endif
+    @endauth
+    @guest
+    <?php
+    header("/");
+    exit();
+    ?>
+    @endguest
 
 <h1 class="text-3xl font-black">Transactions</h1>
 
