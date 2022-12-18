@@ -10,7 +10,7 @@
 
     <h1 class="font-black text-3xl text-gray-800 text-center mx-auto mt-10 pt-20">{{ $berita['title'] }}</h1>
 
-    <img src="/img/{{ $berita['cover'] }}" alt="" class="mx-auto mt-6 max-h-96">
+    <img src="/img/{{ $berita['cover'] }}" alt="" class="mx-auto mt-6 max-h-96 min-h-[20rem]">
 
     <div class="lg:w-3/5 h-fit mt-12 mx-8 md:mx-auto">
         <div class="flex">
