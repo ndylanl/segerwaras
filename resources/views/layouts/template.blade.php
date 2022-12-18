@@ -182,9 +182,12 @@
     
     <footer class="p-4 bg-neutral-200 sm:p-6 dark:bg-gray-900 border-2 border-spacing-20 border-t-green-700">
         <div class="md:flex md:justify-between w-full">
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 px-4 lg:pl-8">
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 px-4 lg:pl-8 w-full">
+                <div class="col-span-2 sm:col-span-1 hidden sm:block ml-6 mt-6">
+                    <h2 class="mb-6 text-2xl font-semibold text-gray-900 uppercase dark:text-white">Seger Waras</h2>
+                </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Directory</h2>
+                    <h2 class="mb-6 text-md font-semibold text-gray-900 uppercase dark:text-white mt-6 w-full border-b-2 border-b-green-800">Directory</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="/" class="hover:underline">Beranda</a>
@@ -201,7 +204,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">CONTACT</h2>
+                    <h2 class="mb-6 text-md font-semibold text-gray-900 uppercase dark:text-white mt-6 w-full border-b-2 border-b-green-800">CONTACT</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
                             <a href="#" class="hover:underline hover:text-black text-sm">+62 827-482-889</a>
@@ -211,20 +214,6 @@
                         </li>
                         <li class="mb-4">
                             <a href="#" class="hover:underline hover:text-black text-sm">segerwaras@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-span-2 sm:col-span-1">
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Subscribe to newsletter</h2>
-                    <ul class="text-gray-600 dark:text-gray-400">
-                        <li class="mb-4">
-                            <p>Dapatkan berita terkini dan informasi ekslusif untuk pelanggan yang berharga dengan berlangganan ke newsletter kami.</p>
-                        </li>
-                        <li>
-                            <form action="" class="flex">
-                                <input type="text" class="focus:ring-2 focus:ring-green-500">
-                                <button class="border border-gray-500 px-3 bg-green-500 text-white -ml-[1px] hover:ring-2 hover:ring-green-500 hover:border-green-500">></button>
-                            </form>
                         </li>
                     </ul>
                 </div>

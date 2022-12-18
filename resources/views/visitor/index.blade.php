@@ -81,41 +81,40 @@
 
 {{-- this is contact us --}}  
 
-<div id="3" class="bg-neutral-50 h-fit pt-20 md:pt-1">
-    <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-20 lg:mx-0">
-        <div class="w-full pt-6 lg:pl-6 px-10">
-            <h4 class="text-3xl font-bold md:mb-6">Contact Us</h4>
-            <p class="mt-3 lg:mr-12">
-                Salam sejahtera, di situs web kami, Anda akan menemukan kontak profesional yang 
-                siap membantu Anda dengan kebutuhan Anda. Dengan mengisi formulir kontak kami, Anda 
-                dapat dengan mudah mencapai tim support kami. <br> <br>
-                Langkah awal yang harus Anda lakukan adalah untuk mengisi formulir dan menyertakan 
-                rincian kontak Anda, sehingga kami dapat menghubungi Anda dengan informasi yang Anda 
-                butuhkan dan memberikan jawaban atas pertanyaan yang Anda miliki. Kami tunggu kehadiran Anda.
+<div id="3" class="bg-neutral-50 h-fit py-20 md:pt-1 text-lg">
+    {{-- What and Why --}}
+    
+    <div class="w-3/4 mx-auto my-6">
+        <h1 class="text-2xl font-bold">Apa itu Seger Waras?</h1>
+        <hr class="border-1 border-green">
+        <div class="flex flex-col-reverse md:flex-row">
+            <p class="mt-6 leading-relaxed text-sm md:text-lg">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Perspiciatis repudiandae est cumque, vel, voluptates tenetur 
+                et odit distinctio quisquam libero reprehenderit alias, voluptatem illo ipsa placeat. 
+                Eligendi possimus libero facere! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Animi excepturi odit cum dolore incidunt ipsa ex perferendis nemo corporis saepe 
+                cumque obcaecati vero a, laborum facilis, iure sapiente voluptates commodi?
             </p>
+            <img class="hidden md:block w-1/2 rounded-xl shadow-xl mt-2" src="/img/jamu.jpg" alt="">
+            <img class="block md:hidden w-full rounded-xl shadow-xl mt-2" src="/img/jamu.jpg" alt="">
         </div>
-        <div class="w-full p-8">
-            <form action="" method="">
-                <div class="grid md:grid-cols-2 md:gap-6">
-                    <div class="relative z-0 mb-6 w-full group">
-                        <label for="floating_first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
-                        <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    </div>
-                    <div class="relative z-0 mb-6 w-full group">
-                        <label for="floating_last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
-                        <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    </div>
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <label for="floating_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">E-mail</label>
-                    <input type="email" name="floating_email" id="floating_email" class="bg-slate-50 rounded-lg border p-2.5 border-gray-300 block py-2.5 w-full text-sm text-gray-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                </div>
-                <div class="relative z-0 mb-6 w-full group">     
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
-                    <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
-                </div>
-                <button type="submit" class="text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
-            </form>
+    </div>
+
+    <div class="w-3/4 mx-auto mt-10 mb-8">
+        <h1 class="text-2xl font-bold">Kenapa Seger Waras?</h1>
+        <hr class="border-1 border-green">
+        <div class="flex flex-col md:flex-row">
+            <img class="hidden md:block w-1/2 rounded-xl shadow-xl mt-2" src="/img/jamu2.jpg" alt="">
+            <img class="block md:hidden w-full rounded-xl shadow-xl mt-2" src="/img/jamu2.jpg" alt="">
+            <p class="mt-6 md:ml-3 leading-relaxed text-sm md:text-lg">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Perspiciatis repudiandae est cumque, vel, voluptates tenetur 
+                et odit distinctio quisquam libero reprehenderit alias, voluptatem illo ipsa placeat. 
+                Eligendi possimus libero facere! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Animi excepturi odit cum dolore incidunt ipsa ex perferendis nemo corporis saepe 
+                cumque obcaecati vero a, laborum facilis, iure sapiente voluptates commodi?
+            </p>
         </div>
     </div>
 
