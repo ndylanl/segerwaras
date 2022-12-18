@@ -35,7 +35,7 @@
                     <td>{{ $transaction['status'] }}</td>
                     <td class="p-2">
                         <a href="transaction/{{ $transaction['id'] }}" class="bg-green-300 rounded-md p-3 w-full">Show</a>
-                        @if ($transaction->state == 'processing')
+                        @if ($transaction->status == 'processing')
                         <form action="{{route("transaction.update", ['transaction' => $transaction]) }}" method="POST">
                             @csrf
                             @method('PATCH')
