@@ -15,6 +15,6 @@ class CartItemSeeder extends Seeder
      */
     public function run()
     {
-        //CartItem::Factory()->count(20)->create();
+        CartItem::Factory()->count(20)->create();
     }
 }

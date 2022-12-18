@@ -5,7 +5,7 @@
 @section('content')
 
 
-
+<main  id="swup" class="transition-fade">
 <div class="bg-neutral-50 pb-12">
     <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
         <hr class="my-8 w-[48rem] md:w-[68rem] h-px bg-green-800 border-0">
@@ -52,6 +52,8 @@
         </div>
     </div>
 </div>
+</main>
+
 
 
 @endsection

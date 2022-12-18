@@ -4,9 +4,7 @@
 
 @section('content')
 
-
-
-<div class="bg-neutral-50 pb-10">
+<div class="bg-neutral-50 pb-10" >
 
     <h1 class="font-black text-3xl text-gray-800 text-center mx-auto pt-32">{{ $product['name'] }}</h1>
 
@@ -145,6 +143,8 @@
             @endforeach
         </div>
     </div>
+
+</div>
 
 
 

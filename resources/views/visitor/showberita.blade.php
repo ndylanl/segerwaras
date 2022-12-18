@@ -4,8 +4,7 @@
 
 @section('content')
 
-
-
+<main id="swup" class="transition-fade">
 <div class="bg-neutral-50 pb-16">
 
     <h1 class="font-black text-3xl text-gray-800 text-center mx-auto mt-10 pt-20">{{ $berita['title'] }}</h1>
@@ -46,6 +45,9 @@
 
 
 </div>
+</main>
+
+
 
 
 @endsection
