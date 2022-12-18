@@ -19,7 +19,7 @@
         @if ($loop->first)
 
         <div class="flex flex-col md:mx-auto mx-8 items-center bg-white border rounded-lg shadow-md md:flex-row md:w-3/4">
-            <img class="object-cover hidden md:block w-full rounded-t-lg m-4 h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/img/sgrwrsCap.png" alt="">
+            <img class="object-cover hidden md:block w-1/2 m-2 md:rounded-none" src="/img/{{ $br['cover'] }}" alt="">
             <div class="p-5">
                 <div class="flex">
                     <img src="/img/calendarIcon.png" alt="">
