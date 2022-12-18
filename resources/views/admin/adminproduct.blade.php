@@ -46,7 +46,7 @@
                     <td>{{ $pr['price'] }}</td>
                     <td>{{ $pr['unitStock'] }}</td>
                     <td>
-                        <img src="/img/{{ $pr['cover'] }}" style="width: 100px; height: 100px">
+                        <img src="/img/products/{{ $pr['cover'] }}" style="width: 100px; height: 100px">
                     </td>
                     <td>
                         {{$pr['isVisible']}}
