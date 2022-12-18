@@ -24,6 +24,12 @@
                     @include('profile.partials.delete-user-form')
                 </div>
             </div>
+
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    <a href="/transactions" class="bg-green-300 rounded p-3 mt-5 hover:bg-green-500 hover:ring-2 hover:ring-green-500">See Transactions</a>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
