@@ -81,7 +81,7 @@
 
 {{-- this is contact us --}}  
 
-<div id="3" class="bg-neutral-50 h-fit py-20 md:pt-1 text-lg">
+<div id="3" class="bg-neutral-50 h-fit py-40 md:pt-1 text-lg">
     {{-- What and Why --}}
     
     <div class="w-3/4 mx-auto my-6">
