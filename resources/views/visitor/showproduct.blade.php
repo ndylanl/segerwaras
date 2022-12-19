@@ -11,7 +11,7 @@
 
 
     <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-10 bg-neutral-50">
-        <img src="/img/products/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto mt-10">
+        <img src="/storage/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto mt-10">
         <div class="mt-16 lg:h-96 px-10 md:p-0">
             <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
             <p class="mt-8">{{ $product['description'] }}</p>

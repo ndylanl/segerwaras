@@ -103,6 +103,11 @@ class ReviewController extends Controller
     public function destroy(Request $request, Review $review)
     {
         $review->delete();
-        return redirect('/adminr');
+        
+        if (Auth::user()->role == "admin") {
+            return redirect('/adminr');
+        }
+
+        return redirect('/products/'.$request->product_id);
     }
 }

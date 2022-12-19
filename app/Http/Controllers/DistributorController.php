@@ -72,7 +72,7 @@ class DistributorController extends Controller
             'description' => $request->description,
             'user_id' => Auth::id()
         ]);
-        return redirect('/');
+        return redirect('/admind');
     }
 
     /**

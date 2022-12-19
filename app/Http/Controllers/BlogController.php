@@ -45,7 +45,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('visitor.createblog',
+        return view('createblog',
         [
             'title' => "Create Blog",
         ]);
@@ -70,7 +70,7 @@ class BlogController extends Controller
             'cover' => $request->file('cover')->store('blogcover', 'public'),
             'user_id' => Auth::id()
         ]);
-        return redirect('/');
+        return redirect('/adminb');
     }
 
     /**
@@ -137,6 +137,6 @@ class BlogController extends Controller
     {
         unlink('storage/'.$blog->cover);
         $blog->delete();
-        return redirect('/');
+        return redirect('/adminb');
     }
 }

@@ -127,7 +127,7 @@ class ProductController extends Controller
         $tag = Tag::find($request->tags);
         $product->tags()->attach($tag);
 
-        return redirect('/');
+        return redirect('/adminp');
     }
 
     /**
@@ -204,6 +204,6 @@ class ProductController extends Controller
     {
         unlink('storage/'.$product->cover);
         $product->delete();
-        return redirect('/');
+        return redirect('/adminp');
     }
 }

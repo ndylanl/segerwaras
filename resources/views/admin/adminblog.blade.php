@@ -46,7 +46,7 @@
                     <td>{{ $blog['title'] }}</td>
                     <td>{{ $blog['content'] }}</td>
                     <td>
-                        <img src="/img/{{ $blog['cover'] }}" style="width: 100px; height: 100px">
+                        <img src="storage/{{ $blog['cover'] }}" style="width: 100px; height: 100px">
                     </td>
                     <td>{{ $blog['user_id'] }}</td>
                     <td class="p-2">
