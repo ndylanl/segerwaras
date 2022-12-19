@@ -5,10 +5,14 @@
 @section('content')
 
 <main  id="swup" class="transition-fade">
-<div class="bg-neutral-50">
-    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-24">
-        <hr class="my-8 w-[15rem] md:w-[68rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2 px-28">SHOPPING CART</span>
+<div class="bg-white mb-12 border border-gray-300 w-11/12 rounded-lg shadow-md mx-auto  lg:mt-28 mt-16 pb-8">
+    <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
+        <div class="font-black text-3xl text-center mx-auto">
+            <div class="inline-flex justify-center items-center bg-green-600 w-fit px-16 py-2">
+                <hr class="my-8 w-[38rem] md:w-[56rem] h-px bg-white border-0">
+                <span class="absolute left-1/2 text-3xl font-black -translate-x-1/2 bg-green-600 w-fit mx-auto px-20">SHOPPING CART</span>
+            </div>
+        </div>
     </div>
 
     <div class="w-3/4 mx-auto">

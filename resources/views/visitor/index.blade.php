@@ -89,12 +89,7 @@
         <hr class="border-1 border-green">
         <div class="flex flex-col-reverse md:flex-row">
             <p class="mt-6 leading-relaxed text-sm md:text-lg">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Perspiciatis repudiandae est cumque, vel, voluptates tenetur 
-                et odit distinctio quisquam libero reprehenderit alias, voluptatem illo ipsa placeat. 
-                Eligendi possimus libero facere! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Animi excepturi odit cum dolore incidunt ipsa ex perferendis nemo corporis saepe 
-                cumque obcaecati vero a, laborum facilis, iure sapiente voluptates commodi?
+                Selamat datang di Seger Waras, perusahaan pembuat obat dan jamu tradisional modern. Kami memiliki rencana, tujuan, dan isi yang jelas untuk memproduksi obat tradisional dan jamu yang berkualitas tinggi. Kami berpegang teguh pada labu standar kualitas dan proses produksi yang ketat. Kami juga memberikan konsultasi keahlian dan pendidikan yang sesuai untuk meningkatkan pengetahuan dan pemahaman tentang obat tradisional dan jamu. Kami berusaha memberikan pelayanan yang profesional dan kompeten untuk memenuhi kebutuhan pasar.
             </p>
             <img class="hidden md:block w-1/2 rounded-xl shadow-xl mt-2" src="/img/jamu.jpg" alt="">
             <img class="block md:hidden w-full rounded-xl shadow-xl mt-2" src="/img/jamu.jpg" alt="">
@@ -108,12 +103,7 @@
             <img class="hidden md:block w-1/2 rounded-xl shadow-xl mt-2" src="/img/jamu2.jpg" alt="">
             <img class="block md:hidden w-full rounded-xl shadow-xl mt-2" src="/img/jamu2.jpg" alt="">
             <p class="mt-6 md:ml-3 leading-relaxed text-sm md:text-lg">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Perspiciatis repudiandae est cumque, vel, voluptates tenetur 
-                et odit distinctio quisquam libero reprehenderit alias, voluptatem illo ipsa placeat. 
-                Eligendi possimus libero facere! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Animi excepturi odit cum dolore incidunt ipsa ex perferendis nemo corporis saepe 
-                cumque obcaecati vero a, laborum facilis, iure sapiente voluptates commodi?
+                Seger Waras adalah pilihan terbaik Anda untuk obat dan jamu tradisional modern. Kami memiliki produk berkualitas tinggi yang disesuaikan dengan standar kualitas yang ketat. Kami juga menawarkan konsultasi keahlian dan pendidikan yang berkaitan dengan obat tradisional dan jamu. Kami berusaha memberikan pelayanan yang berkualitas tinggi dan ramah untuk menghadirkan solusi terbaik bagi Anda. Kami juga menyediakan harga terjangkau yang sepadan dengan kualitas produk yang kami tawarkan.
             </p>
         </div>
     </div>

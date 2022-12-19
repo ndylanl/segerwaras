@@ -6,59 +6,135 @@
 
 <div class="bg-neutral-50 pb-10" >
 
-    <h1 class="font-black text-3xl text-gray-800 text-center mx-auto pt-32">{{ $product['name'] }}</h1>
-
-
-
-    <div class="md:grid md:grid-cols-2 lg:px-40 lg:py-10 bg-neutral-50">
-        <img src="/storage/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto mt-10">
-        <div class="mt-16 lg:h-96 px-10 md:p-0">
-            <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
-            <p class="mt-8">{{ $product['description'] }}</p>
-            <p id="unit" class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
-            <?php
-                $attnum = 1;
-            ?>
-            @auth
-            <form action="{{ route('cartItem.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="grid grid-cols-3 w-fit mt-10">
-
-                    <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
-                        -
-                    </button>
-                    <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
-                    <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
-                        +
-                    </button>
-
-                    <input type="number" name="product" value="{{ $product['id'] }}" hidden>
-    
+    <div class="w-3/4 mt-24 px-4 h-full mx-auto hidden md:block">
+        <div class="border border-gray-300 w-full h-fit rounded-lg shadow-2xl bg-white">
+            <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
+                <div class="font-black text-3xl text-center mx-auto">
+                    <div class="inline-flex justify-center items-center bg-green-600 w-fit md:px-16 py-2">
+                        <hr class="my-8 w-[6rem] md:w-[32rem] h-px bg-white border-0">
+                        <span class="absolute left-1/2 text-3xl font-black -translate-x-1/2 bg-green-600 w-fit mx-auto px-2 md:px-20">{{ $product['name'] }}</span>
+                    </div>
                 </div>
-                <button type="submit" class="text-white mt-4 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                    Add to Cart
-                </button>
-            </form>
-            @endauth
-
-            @guest
-            <div class="mt-10">
-                <a href="/login" class="text-white w-32 mt-32 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Login to Purchase
-                </a>
             </div>
-            @endguest
+            <div class="h-full">
+
+                <div class="md:grid md:grid-cols-2">
+                    <img src="/storage/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto">
+                    <div class="mt-16 lg:h-96 px-10 md:p-0">
+                        <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
+                        <p class="mt-8 mr-2">{{ $product['description'] }}</p>
+                        <p id="unit" class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
+                        <?php
+                            $attnum = 1;
+                        ?>
+                        @auth
+                        <form action="{{ route('cartItem.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="grid grid-cols-3 w-fit mt-10">
             
+                                <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
+                                    -
+                                </button>
+                                <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
+                                <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
+                                    +
+                                </button>
+            
+                                <input type="number" name="product" value="{{ $product['id'] }}" hidden>
+                
+                            </div>
+                            <button type="submit" class="text-white mt-4 mb-4 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Add to Cart
+                            </button>
+                        </form>
+                        @endauth
+            
+                        @guest
+                        <div class="mt-10">
+                            <a href="/login" class="text-white w-32 mt-32 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                Login to Purchase
+                            </a>
+                        </div>
+                        @endguest
+                        
+                    </div>
+                </div>
+                              
+            </div>
         </div>
     </div>
 
+    <div class="w-full mt-24 px-4 h-full mx-auto block md:hidden">
+        <div class="border border-gray-300 w-full h-fit rounded-lg shadow-2xl bg-white">
+            <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
+                <div class="font-black text-3xl text-center mx-auto">
+                    <div class="inline-flex justify-center items-center bg-green-600 w-fit md:px-16 py-2">
+                        <hr class="my-8 w-[6rem] md:w-[32rem] h-px bg-white border-0">
+                        <span class="absolute left-1/2 text-3xl font-black -translate-x-1/2 bg-green-600 w-fit mx-auto px-2 md:px-20">{{ $product['name'] }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="h-full">
+
+                <div class="md:grid md:grid-cols-2">
+                    <img src="/storage/{{ $product['cover'] }}" alt="" class="lg:h-96 w-auto mx-auto">
+                    <div class="mt-16 lg:h-96 px-10 md:p-0">
+                        <h1 class="text-2xl">Rp. {{ $product['price'] }}</h1>
+                        <p class="mt-8 mr-2">{{ $product['description'] }}</p>
+                        <p id="unit" class="mt-8">{{ $product['unitStock'] }} Jumlah Tersedia</p>
+                        <?php
+                            $attnum = 1;
+                        ?>
+                        @auth
+                        <form action="{{ route('cartItem.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="grid grid-cols-3 w-fit mt-10">
+            
+                                <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="substract">
+                                    -
+                                </button>
+                                <input class="text-center" type="number" min="1" max="{{ $product['unitStock'] }}" id="quantity" name="quantity" value={{ $attnum }}>
+                                <button type="button" class="border-gray-500 border hover:ring-1 hover:ring-green-500 text-3xl" id="add">
+                                    +
+                                </button>
+            
+                                <input type="number" name="product" value="{{ $product['id'] }}" hidden>
+                
+                            </div>
+                            <button type="submit" class="text-white mt-4 mb-4 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Add to Cart
+                            </button>
+                        </form>
+                        @endauth
+            
+                        @guest
+                        <div class="mt-10">
+                            <a href="/login" class="text-white w-32 mt-32 bg-green-400 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                Login to Purchase
+                            </a>
+                        </div>
+                        @endguest
+                        
+                    </div>
+                </div>
+                              
+            </div>
+        </div>
+    </div>
+
+
     <div class="bg-neutral-50 pt-8 md:pt-0 px-4 md:px-20 pb-20">
-        <div class="border border-gray-300 px-5 pt-5 pb-10 mx-auto bg-white rounded-lg shadow-md md:w-3/4">
-            @auth
+        <div class="border border-gray-300  mx-auto bg-white rounded-lg shadow-md md:w-3/4">
+            <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
+                <p class="py-3 pl-5">
+                    Comments
+                </p>
+            </div>
+            <div class="w-full px-5 pt-5 pb-10">
+ @auth
             <form action="{{ route('review.store') }}" method="POST"  class="w-full">
                 @csrf
                 <div class="mb-3">
-                    <label for="">Comment</label>
                     <textarea name="content" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-slate-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500"></textarea>
                     <div class="w-full flex justify-between">
                         <div class="rate">
@@ -141,6 +217,8 @@
                 @endif
                 
             @endforeach
+            </div>
+           
         </div>
     </div>
 

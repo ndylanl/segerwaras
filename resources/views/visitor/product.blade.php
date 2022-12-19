@@ -5,14 +5,18 @@
 @section('content')
 
 
-<main  id="swup" class="transition-fade">
-<div class="bg-neutral-50 pb-12">
-    <div class="inline-flex justify-center items-center w-full lg:mt-28 mt-16">
-        <hr class="my-8 w-[48rem] md:w-[68rem] h-px bg-green-800 border-0">
-        <span class="absolute left-1/2 text-3xl font-black bg-neutral-50 text-gray-900 -translate-x-1/2  px-8 md:px-28">PRODUK</span>
+<main  id="swup" class="transition-fade bg-neutral-50">
+<div class="bg-white mb-12 border border-gray-300 w-11/12 rounded-lg shadow-md mx-auto  lg:mt-28 mt-16 pb-8">
+    <div class="bg-green-600 text-white border-b-2 rounded-t-md border-gray-300">
+        <div class="font-black text-3xl text-center mx-auto">
+            <div class="inline-flex justify-center items-center bg-green-600 w-fit px-16 py-2">
+                <hr class="my-8 w-[38rem] md:w-[56rem] h-px bg-white border-0">
+                <span class="absolute left-1/2 text-3xl font-black -translate-x-1/2 bg-green-600 w-fit mx-auto px-20">PRODUK</span>
+            </div>
+        </div>
     </div>
 
-    <div class="w-full flex flex-col lg:flex-row mt-8 md:mt-20">
+    <div class="w-full flex flex-col lg:flex-row mt-8 md:mt-20 bg-neutral-50">
         <div class="lg:w-1/4 md:ml-8">
             <form action="/products" method="GET" class="w-full px-4">
                 <input type="search" name="search" class="focus:ring-2 focus:ring-green-500 w-full border-gray-400">
