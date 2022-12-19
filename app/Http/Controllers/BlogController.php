@@ -31,10 +31,10 @@ class BlogController extends Controller
         ]);
     }
 
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
         return view('admin.adminblog',[
-            'blogs' => Blog::all()
+            'blogs' => Blog::where('title', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
     }
 

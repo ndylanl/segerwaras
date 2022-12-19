@@ -52,13 +52,15 @@ class ProductController extends Controller
         
     }
 
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
+
         return view('admin.adminproduct', [
-            'title' => "Admin Product",
-            'products' => Product::all(),
+            'title' => "Products",
+            'products' => Product::where('name', 'like', '%'.$request->search.'%')->paginate(5),
             'tags' =>Tag::all()
         ]);
+
     }
 
     public function indexIndex()

@@ -12,11 +12,13 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('admin.adminusers', [
             'title' => "Admin Users",
-            'users' => User::all()
+            'users' => User::where('name', 'like', '%'.$request->search.'%')
+            ->orWhere('email', 'like', '%'.$request->search.'%')
+            ->orWhere('phone', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
     }
 

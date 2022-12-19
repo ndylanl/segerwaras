@@ -15,11 +15,17 @@ class TransactionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         return view('admin.admintransaction', [
             'title' => 'Admin Transaction',
-            'transactions' => Transaction::all()
+            'transactions' => Transaction::where('name', 'like', '%'.$request->search.'%')
+            ->orWhere('message', 'like', '%'.$request->search.'%')
+            ->orWhere('address', 'like', '%'.$request->search.'%')
+            ->orWhere('city', 'like', '%'.$request->search.'%')
+            ->orWhere('zip', 'like', '%'.$request->search.'%')
+            ->orWhere('phoneNumber', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
     }
 

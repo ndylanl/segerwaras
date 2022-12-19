@@ -31,12 +31,14 @@ class PlantController extends Controller
         ]);
     }
 
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
+
         return view('admin.adminfactories', [
             'title' => "Factories",
-            'factory' => Plant::all()
+            'factory' => Plant::where('name', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
+
     }
 
     /**

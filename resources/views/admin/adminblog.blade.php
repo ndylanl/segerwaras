@@ -17,8 +17,14 @@
     @endguest
     
 
-<div class="inline-flex space-x-96">
+<div class="inline-flex space-x-56">
     <h1 class="text-3xl font-black">Berita</h1>
+    <form action="/adminb" method="GET" class="w-full px-4">
+        <div class="inline-flex">
+            <input type="search" name="search" class="focus:ring-2 focus:ring-green-500 border-gray-400 w-40">
+            <button type="submit" class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>    
+        </div>
+    </form>
     <a href="{{ route('blog.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Berita</a>
 </div>
 
@@ -59,5 +65,9 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="flex-row justify-center">
+        {!! $blogs->links() !!}
+    </div>
 
 @endsection

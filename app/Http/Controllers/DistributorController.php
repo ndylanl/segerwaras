@@ -33,11 +33,12 @@ class DistributorController extends Controller
         ]);
     }
 
-    public function indexAdmin()
+    public function indexAdmin(Request $request)
     {
+
         return view('admin.admindistributor', [
             'title' => "Distributors",
-            'distributor' => Distributor::all()
+            'distributor' => Distributor::where('name', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
     }
 

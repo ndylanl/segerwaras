@@ -16,9 +16,15 @@
     ?>
     @endguest
 
-<div class="inline-flex space-x-80">
+<div class="inline-flex space-x-40">
     <h1 class="text-3xl font-black pt-2">Product</h1>
-    <div>
+    <form action="/adminp" method="GET" class="w-full px-4">
+        <div class="inline-flex">
+            <input type="search" name="search" class="focus:ring-2 focus:ring-green-500 border-gray-400 w-40">
+            <button type="submit" class="mt-2 w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none border-1 border-green-600 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Search</button>    
+        </div>
+    </form>
+    <div class="inline-flex">
         <a href="{{ route('product.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Product</a>
         <a href="{{ route('tag.create') }}" class="bg-green-300 rounded-md p-3 w-full">Create Tag</a>
     </div>
@@ -67,5 +73,9 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="flex-row justify-center">
+        {!! $products->links() !!}
+    </div>
 
 @endsection

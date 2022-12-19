@@ -13,11 +13,11 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('admin.adminreviews' ,[
             'title' => "Admin Review",
-            'reviews' => Review::all()
+            'reviews' => Review::where('content', 'like', '%'.$request->search.'%')->paginate(5)
         ]);
     }
 
